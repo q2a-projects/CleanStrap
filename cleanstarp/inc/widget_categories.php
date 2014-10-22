@@ -104,7 +104,7 @@
 			$widget_opt = @$themeobject->current_widget['param']['options'];
 
 			if(@$themeobject->current_widget['param']['locations']['show_title'])
-				$output = '<h3 class="widget-title">Categories</h3>';
+				$output = '<h3 class="widget-title">' . qa_lang_html('cleanstrap/categories') . '</h3>';
 		
 		
 			$depth= (int)$widget_opt['cs_category_depth']; // change it to get from options
