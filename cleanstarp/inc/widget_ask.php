@@ -2,11 +2,11 @@
 
 
 	class cs_ask_widget {
-		
+
 		function allow_template($template)
 		{
 			$allow=false;
-			
+
 			switch ($template)
 			{
 				case 'activity':
@@ -27,15 +27,15 @@
 					$allow=true;
 					break;
 			}
-			
+
 			return $allow;
 		}
 
-		
+
 		function allow_region($region)
 		{
 			$allow=false;
-			
+
 			switch ($region)
 			{
 				case 'main':
@@ -44,26 +44,26 @@
 					$allow=true;
 					break;
 			}
-			
+
 			return $allow;
 		}
-		
+
 
 		function output_widget($region, $place, $themeobject, $template, $request, $qa_content)
 		{
-			
+
 			if (isset($qa_content['categoryids']))
 				$params=array('cat' => end($qa_content['categoryids']));
 			else
 				$params=null;
-				
+
 			$themeobject->output('<div class="ra-ask-widget">');
 			$themeobject->output(
 				'<form action="'.qa_path_html('ask', $params).'" method="post">',
 					'<div class="input-group">
-						  <input type="text"  name="title" class="form-control" id="ra-ask-search" placeholder="Your question in one sentence">
+						  <input type="text"  name="title" class="form-control" id="ra-ask-search" placeholder="Inizia a scrivere la tua domanda qui">
 						  <span class="input-group-btn">
-							<button class="icon-question btn" type="submit">Ask</button>
+							<button class="icon-question btn" type="submit">Chiedi</button>
 						  </span>
 					</div>',
 					'<input type="hidden" value="1" name="doask1">',
@@ -71,9 +71,9 @@
 			);
 			$themeobject->output('</div>');
 		}
-	
+
 	}
-	
+
 
 /*
 	Omit PHP closing tag to help avoid accidental output

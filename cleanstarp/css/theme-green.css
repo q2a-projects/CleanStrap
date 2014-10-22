@@ -24,7 +24,7 @@ a:hover{
 }
 
 #site-header .site-logo {
-    
+
 }
 .qa-form-tall-button-login:hover, .qa-form-tall-button-send:hover, .qa-form-tall-button-register:hover{
 	background: #6E973C;
@@ -84,3 +84,11 @@ a:hover{
 #a_list .q-cont-right{
 	border-color:#70bc55;
 }
+
+/*Override*/
+#nav-top #site-header .qa-nav-main .qa-nav-main-list li a{
+	color:#fff;
+	text-transform: uppercase;
+}
+
+

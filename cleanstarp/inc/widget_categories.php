@@ -3,7 +3,7 @@
 
 		function cs_widget_form()
 		{
-			
+
 			return array(
 				'style' => 'wide',
 				'fields' => array(
@@ -19,11 +19,11 @@
 			);
 		}
 
-		
+
 		function allow_template($template)
 		{
 			$allow=false;
-			
+
 			switch ($template)
 			{
 				case 'activity':
@@ -44,15 +44,15 @@
 					$allow=true;
 					break;
 			}
-			
+
 			return $allow;
 		}
 
-		
+
 		function allow_region($region)
 		{
 			$allow=false;
-			
+
 			switch ($region)
 			{
 				case 'main':
@@ -61,7 +61,7 @@
 					$allow=true;
 					break;
 			}
-			
+
 			return $allow;
 		}
 		function cs_category_navigation_sub($sub_categories,$depth,$path){
@@ -104,9 +104,9 @@
 			$widget_opt = @$themeobject->current_widget['param']['options'];
 
 			if(@$themeobject->current_widget['param']['locations']['show_title'])
-				$output = '<h3 class="widget-title">Categories</h3>';
-		
-		
+				$output = '<h3 class="widget-title">Categorie</h3>';
+
+
 			$depth= (int)$widget_opt['cs_category_depth']; // change it to get from options
 			$userid=qa_get_logged_in_userid();
 			$categoryslugs=0;
@@ -126,7 +126,7 @@
 			}
 			$output .= '</ul>';
 			$output .= '</div>';
-			
+
 			$cache['categories']['content'] =  $output;
 			$cache['categories']['age'] = time();
 			$cache['changed'] = true;

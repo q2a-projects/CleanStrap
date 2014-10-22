@@ -1,10 +1,14 @@
 /*
 	Theme Name: CleanStrap
-	Theme URI: http://qa-themes.com/themes/cleanstrap
-	Theme Version: 2.4
+	Theme URI: rahularyan.com/cleanstrap
+	Theme Version: 2.1
 	Theme Date: 2014-15-03
-	Theme Author: Towhid Nateghian & Rahul Aryan
-	Theme Author URI:
+	Theme Author: Rahul Aryan & Towhid
+	Theme Author URI: http://www.rahularyan.com/
 	Theme License: GPL 2.0
-	Theme Update Check URI: 
+	Theme Update Check URI:
 */
+
+#site-header {
+    background: #000;
+}
