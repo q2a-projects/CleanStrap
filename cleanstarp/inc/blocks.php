@@ -548,6 +548,10 @@ class qa_html_theme extends qa_html_theme_base
             //$this->output( '<div class="qa-nav-cat">');
             //$this->output( '<ul class="qa-nav-cat-list">');
             $index = 0;
+			if(isset($QA_CONST_PATH_MAP))
+				$navigation['all']['url'] = qa_path_html($QA_CONST_PATH_MAP['categories']);
+			else
+				$navigation['all']['url'] = qa_path_html('categories');
             foreach ($navigation as $key => $navlink) {
                 $this->set_context('nav_key', $key);
                 $this->set_context('nav_index', $index++);
