@@ -70,7 +70,7 @@
 			$widget_opt = @$themeobject->current_widget['param']['options'];
 
 			if(@$themeobject->current_widget['param']['locations']['show_title'])
-				$themeobject->output('<h3 class="widget-title">Tags <a href="'.qa_path_html('tags').'">View All</a></h3>');
+				$themeobject->output('<h3 class="widget-title">'.qa_lang('cleanstrap/tags').'<a href="'.qa_path_html('tags').'">'.qa_lang('cleanstrap/view_all').'</a></h3>');
 				
 			$to_show = (int)$widget_opt['cs_tags_count'];
 			$populartags = qa_db_single_select(qa_db_popular_tags_selectspec(0, (!empty($to_show) ? $to_show : 20)));

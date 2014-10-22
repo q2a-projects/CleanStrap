@@ -1090,7 +1090,7 @@ class qa_html_theme extends qa_html_theme_base
 		$this->output('</h2>'); 
         
 		$this->output('<div class="question-meta">', cs_post_status($q_view), (is_featured($q_view['raw']['postid']) ? '<span class="featured-sticker icon-star">' . qa_lang_html('cleanstrap/featured') . '</span>' : ''), 
-			'<span class="q-view-a-count">'.$q_view['raw']['acount'].' Answers</span>',
+			'<span class="q-view-a-count">'.$q_view['raw']['acount'].' '.qa_lang('cleanstrap/answers').'</span>',
 				'<span class="icon-eye-open q-view-v-count">' . $q_view['raw']['views'] . ' ' . qa_lang_html('cleanstrap/views') . '</span>
 			<a class="cat-in icon-folder-close" href="' . cs_cat_path($q_view['raw']['categorybackpath']) . '">' . $q_view['raw']['categoryname'] . '</a>');
 			
@@ -1219,7 +1219,7 @@ class qa_html_theme extends qa_html_theme_base
 			$this->output('
 				<div class="btn-group featured-image-btn">
 					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-					Featured image <span class="caret"></span>
+					'.qa_lang('cleanstrap/featured_image').'<span class="caret"></span>
 					</button>
 					<div class="dropdown-menu">');
 					$this->question_meta_form();

@@ -67,7 +67,7 @@
 		'x_activities' => '^\'s activities',
 		'ans' => 'ans',
 		'related_questions' => 'Related questions',
-		'tags' => 'tags',
+		'tags' => 'Tags',
 		'unfeatured' => 'Un-feature',
 		'remove_featured' => 'Unfeature this question',
 		'select_answer' => 'Select answer',
