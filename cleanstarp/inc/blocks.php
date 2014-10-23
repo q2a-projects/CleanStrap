@@ -584,106 +584,105 @@ class qa_html_theme extends qa_html_theme_base
     
     function main()
     {
-        $content = $this->content;
-       
-	   if ($this->template == 'admin' && qa_opt('cs_nav_position') == 'top')
-            $this->nav('sub');
+		$content = $this->content;
+		$class = 'main';
+		if ($this->template == 'admin' && qa_opt('cs_nav_position') == 'top')
+			$this->nav('sub');
 			
-        $this->output('<div class="clearfix qa-main' . (@$this->content['hidden'] ? ' qa-main-hidden' : '') . '">');
-        $col_width = ($this->cs_position_active('Right') && $this->template != 'question');
-        
-        $this->output('<div class="col-sm-' . ($col_width ? '8' : '12') . ' list-c">');
-        
-        if ($this->template != 'user-answers' && $this->template != 'user-questions' && $this->template != 'user-activity' && $this->template != 'user-wall' && $this->template != 'question' && $this->template != 'user' && (!strlen(qa_request(1)) == 0) && (!empty($this->content['title']))) {
-            $this->output('<h1 class="page-title">', $this->content['title']);
-            $this->feed();
+		$this->output('<div class="clearfix qa-main' . (@$this->content['hidden'] ? ' qa-main-hidden' : '') . '">');
+		$col_width = ($this->cs_position_active('Right') && $this->template != 'question');
+		
+		$this->output('<div class="col-sm-' . ($col_width ? '8' : '12') . ' list-c">');
+		
+		if ($this->template != 'user-answers' && $this->template != 'user-questions' && $this->template != 'user-activity' && $this->template != 'user-wall' && $this->template != 'question' && $this->template != 'user' && (!strlen(qa_request(1)) == 0) && (!empty($this->content['title']))) {
+			$this->output('<h1 class="page-title">', $this->content['title']);
+			$this->feed();
 			$this->favorite();
-            $this->output('</h1>');
-        }
-        if ($this->cs_position_active('Header')) {
-            $this->output('<div class="header-position-c clearfix">');
-            
-            $this->output('<h1 class="intro-title"> ' . qa_lang_html('cleanstrap/got_questions') . '</h1>');
-            
-            if ($this->cs_position_active('Header Left')) {
-                $this->output('<div class="col-md-' . $class . '">');
-                $this->cs_position('Header Left');
-                $this->output('</div>');
-            }
-            
-            if ($this->cs_position_active('Header')) {
-                $this->output('<div class="col-md-' . (12 - @$class) . '">');
-                $this->cs_position('Header');
-                $this->output('</div>');
-            }
-            if ($this->cs_position_active('Header Right')) {
-                $this->output('<div class="col-md-' . $class . '">');
-                $this->cs_position('Header Right');
-                $this->output('</div>');
-            }
-            $this->output('</div>');
-        }
+			$this->output('</h1>');
+		}
+		if ($this->cs_position_active('Header')) {
+			$this->output('<div class="header-position-c clearfix">');
+			
+			$this->output('<h1 class="intro-title"> ' . qa_lang_html('cleanstrap/got_questions') . '</h1>');
+			
+			if ($this->cs_position_active('Header Left')) {
+				$this->output('<div class="col-md-' . $class . '">');
+				$this->cs_position('Header Left');
+				$this->output('</div>');
+			}
+			
+			if ($this->cs_position_active('Header')) {
+				$this->output('<div class="col-md-' . (12 - @$class) . '">');
+				$this->cs_position('Header');
+				$this->output('</div>');
+			}
+			if ($this->cs_position_active('Header Right')) {
+				$this->output('<div class="col-md-' . $class . '">');
+				$this->cs_position('Header Right');
+				$this->output('</div>');
+			}
+			$this->output('</div>');
+		}
 		
 		if ($this->template != 'question')
 			$this->cs_position('Content Top');
-        
-        if (isset($this->content['error']))
-            $this->error(@$this->content['error']);
-        if ($this->template == 'user' && !(isset($_REQUEST['state']) && $_REQUEST['state'] == 'edit')) {
-            $this->profile_page();
-        } elseif (strlen(qa_request(1)) == 0) {
-            $this->home($content);
-        } elseif ($this->template == 'question') {
-            $this->question_view($content);
-        } elseif ($this->template == 'user-wall') {
-            $handle = qa_request_part(1);
-            $this->output('<section id="content" class="content-sidebar user-cols">');
-            $this->cs_user_nav($handle);
-            $this->output('<div class="messages">');
-            $this->message_list_and_form($this->content['message_list']);
-            $this->output('</div></section>');
-        } elseif ($this->template == 'user' && (isset($_REQUEST['state']) && $_REQUEST['state'] == 'edit')) {
-            $handle = qa_request_part(1);
-            if (!strlen($handle)) {
-                $handle = qa_get_logged_in_handle();
-            }
-            
-            $this->output('<section id="content" class="content-sidebar user-cols">');
-            $this->cs_user_nav($handle);
-            $this->main_parts($content);
-            $this->output('</section>');
-        } elseif ($this->template == 'account' || $this->template == 'favorites' || $this->template == 'user-activity' || $this->template == 'user-questions' || $this->template == 'user-answers') {
-            $handle = qa_request_part(1);
-            if (!strlen($handle)) {
-                $handle = qa_get_logged_in_handle();
-            }
-            
-            $this->output('<section id="content" class="content-sidebar user-cols">');
-            $this->cs_user_nav($handle);
-            $this->main_parts($content);
-            $this->output('</section>');
-        } else {
-            
-            if ($this->template != 'admin')
-                $this->nav('sub');
-            $this->main_parts($content);
-            
-            if ($this->template != 'question')
-                $this->page_links();
-            
-            $this->suggest_next();
-        }
-        $this->cs_position('Content Bottom');
-        
-        $this->output('</div>');
-        
-        if ($col_width) {
-            $this->sidepanel();
-        }
-        $this->output('</div>');
-        $this->cs_position('Content Bottom');
-        $this->footer();
-        
+		
+		if (isset($this->content['error']))
+			$this->error(@$this->content['error']);
+		if ($this->template == 'user' && !(isset($_REQUEST['state']) && $_REQUEST['state'] == 'edit')) {
+			$this->profile_page();
+		} elseif (strlen(qa_request(1)) == 0) {
+			$this->home($content);
+		} elseif ($this->template == 'question') {
+			$this->question_view($content);
+		} elseif ($this->template == 'user-wall') {
+			$handle = qa_request_part(1);
+			$this->output('<section id="content" class="content-sidebar user-cols">');
+			$this->cs_user_nav($handle);
+			$this->output('<div class="messages">');
+			$this->message_list_and_form($this->content['message_list']);
+			$this->output('</div></section>');
+		} elseif ($this->template == 'user' && (isset($_REQUEST['state']) && $_REQUEST['state'] == 'edit')) {
+			$handle = qa_request_part(1);
+			if (!strlen($handle)) {
+				$handle = qa_get_logged_in_handle();
+			}
+			
+			$this->output('<section id="content" class="content-sidebar user-cols">');
+			$this->cs_user_nav($handle);
+			$this->main_parts($content);
+			$this->output('</section>');
+		} elseif ($this->template == 'account' || $this->template == 'favorites' || $this->template == 'user-activity' || $this->template == 'user-questions' || $this->template == 'user-answers') {
+			$handle = qa_request_part(1);
+			if (!strlen($handle)) {
+				$handle = qa_get_logged_in_handle();
+			}
+			
+			$this->output('<section id="content" class="content-sidebar user-cols">');
+			$this->cs_user_nav($handle);
+			$this->main_parts($content);
+			$this->output('</section>');
+		} else {
+			
+			if ($this->template != 'admin')
+				$this->nav('sub');
+			$this->main_parts($content);
+			
+			if ($this->template != 'question')
+				$this->page_links();
+			
+			$this->suggest_next();
+		}
+		$this->cs_position('Content Bottom');
+		
+		$this->output('</div>');
+		
+		if ($col_width) {
+			$this->sidepanel();
+		}
+		$this->output('</div>');
+		$this->cs_position('Content Bottom');
+		$this->footer();
     }
     function title() // add RSS feed icon after the page title
     {
