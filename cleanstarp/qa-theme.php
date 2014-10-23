@@ -1,7 +1,7 @@
 <?php
 
-	///error_reporting(0);
-	///@ini_set('display_errors', 0);
+	$debug = false;
+
 		
 	/* don't allow this page to be requested directly from browser */	
 	if (!defined('QA_VERSION')) {
@@ -10,9 +10,17 @@
 	}
 	$cs_error ='';
 
+	if($debug){
+		error_reporting(E_ALL);
+		ini_set('display_errors', '1'); 
+	}else{
+		error_reporting(0);
+		@ini_set('display_errors', 0);
+	}
+	
 	function get_base_url()
 	{
-		
+		return(qa_opt('site_url'));
 	}	
 
 	
