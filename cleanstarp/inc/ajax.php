@@ -35,7 +35,7 @@ function cs_ajax_save_widget_position()
 {
 	if (qa_get_logged_in_level() >= QA_USER_LEVEL_ADMIN) {
 		$position     = strip_tags($_REQUEST['position']);
-		$jsonstring = stripslashes2(str_replace('\"', '"', $_REQUEST['widget_names']));
+		$jsonstring = $_REQUEST['widget_names'];//stripslashes2(str_replace('\"', '"', $_REQUEST['widget_names']));
 		$widget_names = json_decode($jsonstring, true);
 		$newid        = array();
 		if (isset($widget_names) && is_array($widget_names))
