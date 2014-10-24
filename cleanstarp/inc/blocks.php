@@ -1132,7 +1132,7 @@ class qa_html_theme extends qa_html_theme_base
             $this->output('</div>');
             
             $this->q_view_extra($q_view);
-            $this->ra_post_buttons($q_view, true);
+            $this->cs_post_buttons($q_view, true);
             
             $this->output('</div>');
             $this->c_list(@$q_view['c_list'], 'qa-q-view');
@@ -1178,7 +1178,7 @@ class qa_html_theme extends qa_html_theme_base
 			);
 		}
 	}
-    function ra_post_buttons($q_view, $show_feat_img=false)
+    function cs_post_buttons($q_view, $show_feat_img=false)
     {
         $buttons = $q_view['form']['buttons'];
         
@@ -1263,7 +1263,7 @@ class qa_html_theme extends qa_html_theme_base
         
         $this->output('</div>');
         $this->output('<div class="qa-c-wrap">');
-        $this->ra_comment_buttons($c_item);
+        $this->cs_comment_buttons($c_item);
         $this->post_meta($c_item, 'qa-c-item');
         $this->c_item_main($c_item);
         $this->output('</div>');
@@ -1281,7 +1281,7 @@ class qa_html_theme extends qa_html_theme_base
         else
             $this->c_item_content($c_item);
     }
-    function ra_comment_buttons($c_item)
+    function cs_comment_buttons($c_item)
     {
         $buttons = $c_item['form']['buttons'];
         
@@ -1375,7 +1375,7 @@ class qa_html_theme extends qa_html_theme_base
         //if ($a_item['hidden'] || $a_item['selected'])
         
         
-        $this->ra_post_buttons($a_item);
+        $this->cs_post_buttons($a_item);
         $this->output('</div>');
         $this->c_list(@$a_item['c_list'], 'qa-a-item');
         if (isset($a_item['main_form_tags'])) {

@@ -7,7 +7,7 @@
 
 function get_all_widgets()
 {		
-	$widgets = qa_db_read_all_assoc(qa_db_query_sub('SELECT * FROM ^ra_widgets ORDER BY widget_order'));
+	$widgets = qa_db_read_all_assoc(qa_db_query_sub('SELECT * FROM ^cs_widgets ORDER BY widget_order'));
 	foreach($widgets as $k => $w){
 		$param = preg_replace('!s:(\d+):"(.*?)";!e', "'s:'.strlen('$2').':\"$2\";'", $w['param']);
 		$param = unserialize($param);
@@ -18,7 +18,7 @@ function get_all_widgets()
 }
 function get_widgets_by_position($position)
 {		
-	$widgets = qa_db_read_all_assoc(qa_db_query_sub('SELECT * FROM ^ra_widgets WHERE position = $ ORDER BY widget_order', $position));
+	$widgets = qa_db_read_all_assoc(qa_db_query_sub('SELECT * FROM ^cs_widgets WHERE position = $ ORDER BY widget_order', $position));
 	foreach($widgets as $k => $w){
 		$param = unserialize($w['param']);
 		$widgets[$k]['param'] = $param;
@@ -31,7 +31,7 @@ function widget_opt($name, $position=false, $order = false, $param = false, $id=
 	if($position && $param){
 		return widget_opt_update($name, $position, $order, $param, $id);		
 	}else{
-		qa_db_read_one_value(qa_db_query_sub('SELECT * FROM ^ra_widgets WHERE name = $',$name ), true);		
+		qa_db_read_one_value(qa_db_query_sub('SELECT * FROM ^cs_widgets WHERE name = $',$name ), true);		
 	}
 }
 
@@ -40,20 +40,20 @@ function widget_opt_update($name, $position, $order, $param, $id = false){
 
 	if($id){
 		qa_db_query_sub(
-			'UPDATE ^ra_widgets SET position = $, widget_order = #, param = $ WHERE id=#',
+			'UPDATE ^cs_widgets SET position = $, widget_order = #, param = $ WHERE id=#',
 			$position, $order, $param, $id
 		);
 		return $id;
 	}else{
 		qa_db_query_sub(
-			'INSERT ^ra_widgets (name, position, widget_order, param) VALUES ($, $, #, $)',
+			'INSERT ^cs_widgets (name, position, widget_order, param) VALUES ($, $, #, $)',
 			$name, $position, $order, $param
 		);
 		return qa_db_last_insert_id();
 	}
 }
 function widget_opt_delete($id ){
-	qa_db_query_sub('DELETE FROM ^ra_widgets WHERE id=#', $id);
+	qa_db_query_sub('DELETE FROM ^cs_widgets WHERE id=#', $id);
 }
 
 function cs_user_data($handle){
@@ -489,7 +489,7 @@ function cs_ajax_user_popover(){
 	require_once QA_INCLUDE_DIR.'qa-db-users.php';
 	if(isset($handle)){
 		$userid = qa_handle_to_userid($handle);
-		//$badges = ra_user_badge($handle);
+		//$badges = cs_user_badge($handle);
 		
 		if(defined('QA_WORDPRESS_INTEGRATE_PATH')){
 			$userid = qa_handle_to_userid($handle);
