@@ -75,7 +75,7 @@
 
 				//create table for builder
 				qa_db_query_sub(
-					'CREATE TABLE IF NOT EXISTS ^cs_widgets ('.
+					'CREATE TABLE IF NOT EXISTS ^ra_widgets ('.
 						'id INT(10) NOT NULL AUTO_INCREMENT,'.				
 						'name VARCHAR (64),'.				
 						'position VARCHAR (64),'.				

@@ -40,7 +40,7 @@ class qa_html_theme_layer extends qa_html_theme_base {
 		
 			$saved=false;
 			if (qa_clicked('cs_remove_all_button')) {	
-				qa_db_query_sub('TRUNCATE TABLE ^cs_widgets');
+				qa_db_query_sub('TRUNCATE TABLE ^ra_widgets');
 				$saved=true;
 			}
 			if (qa_clicked('cs_reset_widgets_button')) {	
