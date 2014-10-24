@@ -23,7 +23,6 @@
 		return(qa_opt('site_url'));
 	}	
 
-	
 	define('Q_THEME_DIR', dirname( __FILE__ ));
 	define('Q_THEME_URL', qa_opt('site_url').'/qa-theme/'.qa_get_site_theme());
 	
@@ -41,8 +40,9 @@
 		
 	}else{
 		global $qa_request;
-		
-		if (qa_get_logged_in_level()>=QA_USER_LEVEL_ADMIN){
+		$version = qa_opt('cs_version');
+		if(empty($version)) $version=0;
+		if (version_compare($version, '2.4.3') < 0){
 			if(!(bool)qa_opt('cs_init')){ // theme init 
 				cs_register_widget_position(
 					array(
@@ -70,28 +70,32 @@
 				qa_opt('cs_init',true);
 			}
 
-			if(!qa_opt('cs_installed')){
-			/* add some option when theme init first time */
-
-				//create table for builder
-				qa_db_query_sub(
-					'CREATE TABLE IF NOT EXISTS ^ra_widgets ('.
-						'id INT(10) NOT NULL AUTO_INCREMENT,'.				
-						'name VARCHAR (64),'.				
-						'position VARCHAR (64),'.				
-						'widget_order INT(2) NOT NULL DEFAULT 0,'.				
-						'param LONGTEXT,'.				
-						'PRIMARY KEY (id),'.
-						'UNIQUE KEY id (id)'.				
-					') ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;'
-				);
-				qa_opt('cs_installed', true); // update db, so that this code should not execute every time
-
-			}
-			
+			//create table for widgets
+			qa_db_query_sub(
+				'CREATE TABLE IF NOT EXISTS ^ra_widgets ('.
+					'id INT(10) NOT NULL AUTO_INCREMENT,'.				
+					'name VARCHAR (64),'.				
+					'position VARCHAR (64),'.				
+					'widget_order INT(2) NOT NULL DEFAULT 0,'.				
+					'param LONGTEXT,'.				
+					'PRIMARY KEY (id),'.
+					'UNIQUE KEY id (id)'.				
+				') ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;'
+			);
+			$version = '2.4.3';
+			qa_opt('cs_version', $version); // update version of theme
+		}
+		if (version_compare($version, '2.4.4') < 0){
+			qa_db_query_sub(
+				'RENAME TABLE ^ra_widgets TO  ^cs_widgets;'
+			);
+			$version = '2.4.4';
+			qa_opt('cs_version', $version);
+		}
+		if (qa_get_logged_in_level()>=QA_USER_LEVEL_ADMIN){	
 			qa_register_layer('/inc/options.php', 'Theme Options', Q_THEME_DIR , Q_THEME_URL );	
 			qa_register_layer('/inc/widgets.php', 'Theme Widgets', Q_THEME_DIR , Q_THEME_URL );
-		}		
+		}	
 			
 		qa_register_module('widget', '/inc/widget_ask.php', 'cs_ask_widget', 'CS Ajax Ask', Q_THEME_DIR, Q_THEME_URL);
 		qa_register_module('widget', '/inc/widget_tags.php', 'cs_tags_widget', 'CS Tags', Q_THEME_DIR, Q_THEME_URL);

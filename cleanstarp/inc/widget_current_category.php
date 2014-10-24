@@ -47,7 +47,7 @@
 			return $allow;
 		}
 	
-		function ra_get_cat_desc($slug){
+		function cs_get_cat_desc($slug){
 			
 			$result = qa_db_read_one_assoc(qa_db_query_sub('SELECT title,content FROM ^categories WHERE tags=$', $slug ),true);
 			
@@ -63,7 +63,7 @@
 				
 			if(!(qa_opt('event_logger_to_database'))) return;
 			$widget_opt = @$themeobject->current_widget['param']['options'];
-			$cat = $this->ra_get_cat_desc($req);
+			$cat = $this->cs_get_cat_desc($req);
 			
 			if(@$themeobject->current_widget['param']['locations']['show_title'] && isset($cat['title']))
 				$themeobject->output('<h3 class="widget-title">'.$cat['title'].'</h3>');
