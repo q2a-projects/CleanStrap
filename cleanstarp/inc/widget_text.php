@@ -7,7 +7,7 @@
 			return array(
 				'style' => 'wide',
 				'fields' => array(
-					'cs_nu_count' => array(
+					'cs_t_text' => array(
 						'label' => 'Text',
 						'tags' => 'name="cs_t_text"',
 						'type' => 'textarea',
