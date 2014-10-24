@@ -9,7 +9,7 @@
 			exit;
 	}
 	$cs_error ='';
-
+	
 	if($debug){
 		error_reporting(E_ALL);
 		ini_set('display_errors', '1'); 
@@ -111,14 +111,11 @@
 		qa_register_module('widget', '/inc/widget_related_questions.php', 'cs_related_questions', 'CS Related Questions', Q_THEME_DIR, Q_THEME_URL);
 		qa_register_module('widget', '/inc/widget_text.php', 'cs_widget_text', 'CS Text Widget', Q_THEME_DIR, Q_THEME_URL);
 		qa_register_module('widget', '/inc/widget_posts.php', 'cs_widget_posts', 'CS Posts', Q_THEME_DIR, Q_THEME_URL);
-		
 		qa_register_module('widget', '/inc/widget_user_activity.php', 'cs_user_activity_widget', 'CS User Activity', Q_THEME_DIR, Q_THEME_URL);
-		
 		qa_register_module('widget', '/inc/widget_user_posts.php', 'cs_user_posts_widget', 'CS User Posts', Q_THEME_DIR, Q_THEME_URL);
-		
-		qa_register_module('widget', '/inc/widget_current_category.php', 'cs_current_category_widget', 'CS Current Cat', Q_THEME_DIR, Q_THEME_URL);
-		
 		//enable category widget only if category is active in q2a
-		if ( qa_using_categories() )
+		if ( qa_using_categories() ){
 			qa_register_module('widget', '/inc/widget_categories.php', 'widget_categories', 'CS Categories', Q_THEME_DIR, Q_THEME_URL);			
+			qa_register_module('widget', '/inc/widget_current_category.php', 'cs_current_category_widget', 'CS Current Cat', Q_THEME_DIR, Q_THEME_URL);
+		}
 	}
