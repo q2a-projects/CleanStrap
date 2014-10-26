@@ -1,0 +1,86 @@
+a, .widget .ra-ticker-widget .widget-title a, .qa-q-view-tag-list li a:hover{
+	color:#e45840;
+}
+a:hover{
+	color:#7AAA40;
+}
+
+.btn{
+    background: #222222;
+    color: #FFFFFF;
+	border:none;
+}
+.btn:hover{
+    background: #d6313a;
+    color: #FFFFFF;
+}
+.question-list .question-item .big-ans-count.icon-chat{
+	background:#7AAA40;
+	color:#fff;
+}
+
+.card-metas ,#site-header #nav-ask-btn, .on-off-checkbox-container label, #ra-widgets .widget-canvas .widget-save.active, .ra-tags-widget .widget-tag:hover, .t-bg, .face.back, .qa-form-tall-button-login, .qa-form-tall-button-send, .qa-form-tall-button-register, input[type="radio"]:checked + label, .question-list .question-item .big-ans-count, .pagination > li > .qa-page-selected, .pagination > li:hover > a, .form-button-holder, .qa-template-tags .qa-part-ranking .list-group-item span, .fav-parent .fav-btn, .qa-a-selection .qa-a-select-button, .question-title .fav-parent .fav-btn.active, .post-button #q_doanswer {
+	background:#e45840;
+}
+
+#site-header .site-logo {
+    
+}
+.qa-form-tall-button-login:hover, .qa-form-tall-button-send:hover, .qa-form-tall-button-register:hover{
+	background: #6E973C;
+}
+.navbar-default .navbar-form .icon-search{
+    color: #aaa;
+}
+.user-popover .counts{
+	background:#e45840;
+}
+.left-sidebar .qa-nav-main-list .qa-nav-main-item .qa-nav-main-link.qa-nav-main-selected, .left-sidebar .qa-nav-main-list .qa-nav-main-item .qa-nav-main-link:hover{
+	color:#6E973C;
+}
+
+
+.t-bg2, .qa-main .qa-nav-sub ul li a.qa-nav-sub-selected, .ra-ask-widget .ui-helper-hidden-accessible, .ra-tags-widget .widget-tag, .t-bg:hover, .top-users-list .top-user-data .points, #left-position .ra-tags-widget .widget-tag span, .navbar-default .navbar-nav.category-nav .category-list-drop li a span, .carousel .slider-item .big-ans-count, .featured-sticker, .cs-category-widget-list li a span, .ra-activity .event-icon{
+    background: none repeat scroll 0 0 #FDAB0C;
+}
+
+#site-header .navbar-form ::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #aaa;
+}
+#site-header .navbar-form :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #aaa;
+}
+#site-header .navbar-form ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #aaa;
+}
+#site-header .navbar-form :-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #aaa;
+}
+
+.on-off-checkbox-container, .pagination, .question-tags .tags-tag-list li a:hover {
+	border-color:#e45840;
+}
+#nav-top #site-header .qa-nav-main .qa-nav-main-list li a{
+	color:#898989;
+}
+.ra-ask-widget .input-group-btn button, .carousel-control.left, .carousel-control.right, .ajax-file-upload-bar {
+    background: none repeat scroll 0 0 #d6313a;
+}
+.page-title .fav-btn.icon-heart.active{
+	color:#d6313a;
+}
+
+.t-bg-4{
+	background:#FDAB0C;
+	color:#fff;
+}
+.t-bg-4:hover{
+	background:#e6a629;
+	color:#fff;
+}
+.qa-a-selection input.qa-a-unselect-button, .qa-a-selection .qa-a-selected{
+	background:#00ccff;
+}
+#a_list .q-cont-right{
+	border-color:#70bc55;
+}
