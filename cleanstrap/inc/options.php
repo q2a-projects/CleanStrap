@@ -67,6 +67,7 @@ class qa_html_theme_layer extends qa_html_theme_base
             if (qa_clicked('cs_save_button')) {
                 // General
                 qa_opt('logo_url', qa_post_text('cs_logo_field'));
+                qa_opt('cs_mobile_logo_url', qa_post_text('cs_mobile_logo_url_field'));
                 qa_opt('cs_favicon_url', qa_post_text('cs_favicon_field'));
                 qa_opt('cs_enable_gzip', (bool) qa_post_text('cs_enable_gzip'));
                 qa_opt('cs_featured_image_width', (int) qa_post_text('cs_featured_image_width'));
@@ -345,12 +346,23 @@ class qa_html_theme_layer extends qa_html_theme_base
 				<tr>
 					<th class="qa-form-tall-label">
 						Logo
-						<span class="description">Upload your own logo.</span>
+						<span class="description">Upload your own logo(35px hight is recommended)</span>
 					</th>
 					<td class="qa-form-tall-data">
 						' . (qa_opt('logo_url') ? '<img id="logo-preview" class="logo-preview img-thumbnail" src="' . qa_opt('logo_url') . '">' : '<img id="logo-preview" class="logo-preview img-thumbnail" style="display:none;" src="">') . '
 						<div id="logo_uploader">Upload</div>
 						<input id="cs_logo_field" type="hidden" name="cs_logo_field" value="' . qa_opt('logo_url') . '">
+					</td>
+				</tr>
+				<tr>
+					<th class="qa-form-tall-label">
+						Logo for Mobile Devices
+						<span class="description">Upload your Small logo for mobile devices</span>
+					</th>
+					<td class="qa-form-tall-data">
+						' . (qa_opt('cs_mobile_logo_url') ? '<img id="mobile-logo-preview" class="logo-preview mobile-logo-preview img-thumbnail" src="' . qa_opt('cs_mobile_logo_url') . '">' : '<img id="mobile-logo-preview" class="mobile-logo-preview img-thumbnail" style="display:none;" src="">') . '
+						<div id="mobile_logo_uploader">Upload</div>
+						<input id="cs_mobile_logo_url_field" type="hidden" name="cs_mobile_logo_url_field" value="' . qa_opt('cs_mobile_logo_url') . '">
 					</td>
 				</tr>
 				<tr>

@@ -22,6 +22,28 @@ $(document).ready(function(){
 			pd.statusbar.hide(500); //You choice.		
 		},
 	});
+	$("#mobile_logo_uploader").uploadFile({
+		url:theme_url + "/inc/upload.php",
+		allowedTypes:"png,gif,jpg,jpeg",
+		fileName:"myfile",
+		maxFileCount:1,
+		multiple:false,
+		showDelete: true,
+		onSuccess:function(files,data,xhr)
+		{
+			$("#cs_mobile_logo_url_field").val(theme_url + "/uploads/" + data);
+			$("#mobile-logo-preview").attr("src",theme_url + "/uploads/"+data);
+			$("#mobile-logo-preview").show();
+		},
+		deleteCallback:function(data, pd) {
+			$.post(theme_url + "/inc/upload-delete.php", {op: "delete",name: data},
+					function (resp,textStatus, jqXHR) {
+							$("#mobile-logo-preview").hide(500);
+							$("#cs_mobile_logo_url_field").val("");
+					});
+			pd.statusbar.hide(500); //You choice.		
+		},
+	});
 	$("#favicon_uploader").uploadFile({
 		url:theme_url + "/inc/upload.php",
 		allowedTypes:"png,gif,jpg,jpeg",

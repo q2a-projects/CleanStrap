@@ -24,7 +24,7 @@
 	}	
 
 	define('Q_THEME_DIR', dirname( __FILE__ ));
-	define('Q_THEME_URL', qa_opt('site_url').'/qa-theme/'.qa_get_site_theme());
+	define('Q_THEME_URL', qa_opt('site_url').'qa-theme/'.qa_get_site_theme());
 	
 	include_once Q_THEME_DIR.'/functions.php';
 	include_once Q_THEME_DIR.'/inc/blocks.php';

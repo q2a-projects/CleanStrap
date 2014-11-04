@@ -11,7 +11,7 @@ function get_all_widgets()
 	
 	foreach($widgets as $k => $w){
 		$param =  $w['param'];// @preg_replace('!s:(\d+):"(.*?)";!e', "'s:'.strlen('$2').':\"$2\";'", $w['param']);
-		$param = unserialize($param);
+		$param = @unserialize($param);
 		$widgets[$k]['param'] = $param;
 	}
 	
@@ -340,6 +340,7 @@ function reset_theme_options(){
 	qa_opt('cs_custom_style','');
 	// General
 	qa_opt('logo_url', Q_THEME_URL . '/images/logo.png');
+	qa_opt('cs_mobile_logo_url', Q_THEME_URL . '/images/small-logo.png');
 	qa_opt('cs_favicon_url', '');
 	qa_opt('cs_featured_image_width', 800);
 	qa_opt('cs_featured_image_height', 300);
