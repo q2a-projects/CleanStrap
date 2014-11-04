@@ -110,6 +110,8 @@ class qa_html_theme extends qa_html_theme_base
                 $link      = 'http://fonts.googleapis.com/css?family=' . $font_name;
                 $this->output('<link href="' . $link . '" rel="stylesheet" type="text/css">');
             }
+		if (qa_opt('cs_styling_rtl'))
+			$this->output('<link rel="stylesheet" type="text/css" href="' . Q_THEME_URL . '/css/rtl.css"/>');
     }
     function body()
     {
@@ -2061,7 +2063,18 @@ class qa_html_theme extends qa_html_theme_base
         
         die();
     }
-	
+
+	function body_hidden()
+	{
+		if(qa_opt('cs_styling_rtl'))
+			$this->output('<div style="position:absolute; left:9999px; bottom:9999px;">');
+		else
+			$this->output('<div style="position:absolute; left:-9999px; top:-9999px;">');
+			
+		$this->waiting_template();
+		$this->output('</div>');
+	}
+
 	function cs_user_profile_button($handle){
 		
 		$this->output('<div class="user-personal-links clearfix">');

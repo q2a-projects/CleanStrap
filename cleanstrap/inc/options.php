@@ -98,6 +98,7 @@ class qa_html_theme_layer extends qa_html_theme_base
                 qa_opt('cs_back_to_top_location', qa_post_text('cs_back_to_top_location'));
                 
                 // Styling
+				qa_opt('cs_styling_rtl', (bool) qa_post_text('cs_styling_rtl'));
                 qa_opt('cs_styling_duplicate_question', (bool) qa_post_text('cs_styling_duplicate_question'));
                 qa_opt('cs_styling_solved_question', (bool) qa_post_text('cs_styling_solved_question'));
                 qa_opt('cs_styling_closed_question', (bool) qa_post_text('cs_styling_closed_question'));
@@ -461,6 +462,21 @@ class qa_html_theme_layer extends qa_html_theme_base
 	<div class="qa-part-form-tc-layout">
 		<h3>Layout Settings</h3>
 		<table class="qa-form-tall-table options-table">
+			<tbody>
+				<tr>
+					<th class="qa-form-tall-label">
+						Enable RTL Styling
+						<span class="description">for Right to Left Languages</span>
+					</th>
+					<td class="qa-form-tall-label">
+						<div class="on-off-checkbox-container">
+								<input type="checkbox" class="on-off-checkbox" value="1"' . (qa_opt('cs_styling_rtl') ? ' checked=""' : '') . ' id="cs_styling_rtl" name="cs_styling_rtl">
+							<label for="cs_styling_rtl">
+							</label>
+						</div>
+					</td>
+				</tr>
+			</tbody>
 			<tbody>
 				<tr>
 					<th class="qa-form-tall-label">
