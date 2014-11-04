@@ -1,9 +1,9 @@
-# Q2A CleanStrap Theme [![Question2Answer](http://qa-themes.com/files/q2a-logo.png)](http://www.question2answer.org/) [![Question2Answer Themes](http://qa-themes.com/files/qa-logo.jpg)](http://qa-themes.com/ "Q2A Themes & Plugins")
+# CleanStrap Theme [![Question2Answer](http://qa-themes.com/files/q2a-logo.png)](http://www.question2answer.org/) [![Question2Answer Themes](http://qa-themes.com/files/qa-logo.jpg)](http://qa-themes.com/ "Q2A Themes & Plugins")
 
 ## Description
-[CleanStrap](http://qa-themes.com/themes/cleanstrap "Question2Answer Theme Features")  is a free and open-source **Responsive Question2Answer Theme** with many advanced features such as **Drag & Drop widget Builder** with 16 new widgets and lots of new sections to hold them. also it comes with many options to let you change nearly any aspect of your theme and completely customize your site.
+[CleanStrap](http://qa-themes.com/themes/cleanstrap "Q2A CleanStrao Theme Features")  is a free and open-source **Responsive Question2Answer Theme** with many advanced features such as **Drag & Drop widget Builder** with 16 new widgets and lots of new sections to hold them. also it comes with many options to let you change nearly any aspect of your theme and completely customize your site.
 
-*Theme Demo - coming soon* - **[Theme's Features](http://qa-themes.com/themes/cleanstrap "CleanStrao Theme's features")**
+*Theme Demo - coming soon* - **[Theme's Features](http://qa-themes.com/themes/cleanstrap "CleanStrap Theme's features")**
 
 ## Installation
 
