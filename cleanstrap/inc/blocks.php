@@ -1428,13 +1428,17 @@ class qa_html_theme extends qa_html_theme_base
         $handle = $this->content['raw']['account']['handle'];
         $userid = $this->content['raw']['account']['userid'];
         $about  = cs_user_profile($handle, 'about');
-        
         $this->output('<div class="user-cols content-sidebar">');
         $this->cs_user_nav($handle);
         $this->output('<div class="user-cols-right">');
         if (isset($about) && strlen($about))
             $this->output('<div class="about-me widget">', '<h3 class="widget-title">' . qa_lang_html('cleanstrap/about_me') . '</h3>', $about, '</div>');
         $this->cs_user_activity_count($handle);
+		
+		$this->output('<div class="about-me widget">', '<h3 class="widget-title">' . qa_lang_html('cleanstrap/user_profile') . '</h3>');
+		qa_html_theme_base::form($this->content['form_profile']);
+		$this->output('</div>');
+		
         $this->cs_user_qa($handle);
         $this->output('</div>');
         $this->output('</div>');
@@ -1458,12 +1462,7 @@ class qa_html_theme extends qa_html_theme_base
 				');
         
         $this->output('</div>');
-        if (qa_get_logged_in_level() >= QA_USER_LEVEL_ADMIN) {
-            $this->output('<a id="edit-user" class="btn btn-xs btn-success edit-profile" href="' . qa_path_absolute('user/' . $handle, array(
-                'state' => 'edit'
-            )) . '">' . qa_lang_html('cleanstrap/edit_user') . '</a>');
-        }
-		
+	
 		$this->cs_user_profile_button($handle);
 		
         $this->nav('sub');

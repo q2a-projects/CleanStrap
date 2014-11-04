@@ -76,6 +76,7 @@
 		'tag_slug_empty' => 'Slug/Keyword field is empty.',
 		'featured_image' => 'Featured image',
 		'admin' => 'Admin',
+		'user_profile' => 'User Profile',
 	);
 	
 
