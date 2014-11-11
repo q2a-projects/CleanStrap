@@ -353,7 +353,8 @@ function reset_theme_options(){
 	
 
 	// Layout
-	qa_opt('cs_nav_position', 'top');	
+	qa_opt('cs_styling_rtl', false);
+	qa_opt('cs_nav_position', 'top');
 	qa_opt('cs_theme_layout', 'boxed');
 	qa_opt('cs_nav_fixed', true);	
 	qa_opt('cs_show_icon', true);	
