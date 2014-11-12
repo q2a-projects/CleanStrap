@@ -76,6 +76,10 @@
 		'tag_slug_empty' => 'Slug/Keyword field is empty.',
 		'featured_image' => 'Миниатюра',
 		'admin' => 'Админ-панель',
+		'no_questions' => 'No Questions posted yet!',
+		'no_answers' => 'No Answers posted yet!',
+		'no_comments' => 'No Comments posted yet!',
+		'show_all' => 'Show all',
 	);
 
 

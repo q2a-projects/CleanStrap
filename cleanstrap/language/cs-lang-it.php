@@ -77,6 +77,11 @@
 		'tag_slug_empty' => 'Slug/Keyword field is empty.',
 		'featured_image' => 'Allega immagine',
 		'admin' => 'Admin',
+		'user_profile' => 'User Profile',
+		'no_questions' => 'No Questions posted yet!',
+		'no_answers' => 'No Answers posted yet!',
+		'no_comments' => 'No Comments posted yet!',
+		'show_all' => 'Show all',
 	);
 
 
