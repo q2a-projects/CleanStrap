@@ -38,7 +38,7 @@
 		'search' => 'Search',
 		'top_users' => 'Top Users',
 		'unanswered' => 'Unanswered',
-		'unselected' => 'Unselected',
+		'unselected' => 'Unselected', // best answer is not selected
 		'got_questions' => 'Do you have questions ? We got the answers!',
 		'featured' => 'Featured',
 		'views' => 'Views',
@@ -72,11 +72,15 @@
 		'remove_featured' => 'Unfeature this question',
 		'select_answer' => 'Select answer',
 		'no_activity_yet' => 'No activity yet!',
-		'x_ans' => '^ ans',
+		'x_ans' => '^ ans', // short for "Answers" to fit in tight spots
 		'tag_slug_empty' => 'Slug/Keyword field is empty.',
 		'featured_image' => 'Featured image',
 		'admin' => 'Admin',
 		'user_profile' => 'User Profile',
+		'no_questions' => 'No Questions posted yet!',
+		'no_answers' => 'No Answers posted yet!',
+		'no_comments' => 'No Comments posted yet!',
+		'show_all' => 'Show all',
 	);
 	
 
