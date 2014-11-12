@@ -75,11 +75,11 @@
 					</ul></div>
 					<div class="acti-indicators">
 						<ul>
-					<li><i class="fa fa-circle text-info" style="color:#233445"></i> Questions <span>'.qa_opt('cache_qcount').'</span></li>
-					<li><i class="fa fa-circle text-info" style="color:#3fcf7f"></i> Answers <span>'.qa_opt('cache_acount').'</span></li>
-					<li><i class="fa fa-circle text-info" style="color:#FF5F5F"></i> Comments <span>'.qa_opt('cache_ccount').'</span></li>
-					<li><i class="fa fa-circle text-info" style="color:#13C4A5"></i> Unanswered <span>'.qa_opt('cache_unaqcount').'</span></li>
-					<li><i class="fa fa-circle text-info" style="color:#F4C414"></i> Unselected <span>'.qa_opt('cache_unselqcount').'</span></li>
+					<li><i class="fa fa-circle text-info" style="color:#233445"></i> ' . qa_lang_html('cleanstrap/questions') . ' <span>'.qa_opt('cache_qcount').'</span></li>
+					<li><i class="fa fa-circle text-info" style="color:#3fcf7f"></i> ' . qa_lang_html('cleanstrap/answers') . ' <span>'.qa_opt('cache_acount').'</span></li>
+					<li><i class="fa fa-circle text-info" style="color:#FF5F5F"></i> ' . qa_lang_html('cleanstrap/comments') . ' <span>'.qa_opt('cache_ccount').'</span></li>
+					<li><i class="fa fa-circle text-info" style="color:#13C4A5"></i> ' . qa_lang_html('cleanstrap/unanswered') . ' <span>'.qa_opt('cache_unaqcount').'</span></li>
+					<li><i class="fa fa-circle text-info" style="color:#F4C414"></i> ' . qa_lang_html('cleanstrap/unselected') . ' <span>'.qa_opt('cache_unselqcount').'</span></li>
 				</ul>
 					</div>';
 			}else{
