@@ -60,7 +60,7 @@ if (!defined('QA_VERSION')) {
 	// Responsive mobile logo
 	$mobile_logo = qa_opt('cs_mobile_logo_url');
 	if (!(empty($mobile_logo)))
-		$css.= '@media only screen and (min-width : 320px) and (max-width : 480px){
+		$css.= '@media only screen and (max-width : 480px){
 					#site-header .site-logo a{background: url("' . $mobile_logo . '") repeat scroll 0 0 rgba(0, 0, 0, 0);}
 				}
 		';

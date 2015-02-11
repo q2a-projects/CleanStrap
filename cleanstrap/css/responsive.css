@@ -1,4 +1,4 @@
-@media only screen and (min-width : 320px) and (max-width : 1024px) {
+@media only screen and (max-width : 1024px) {
 	body{
 		margin-top:45px;
 	}
@@ -55,7 +55,7 @@
 		display:block;
 	}
 }
-@media only screen and (min-width : 320px) and (max-width : 979px) {
+@media only screen and (max-width : 979px) {
 
 	.carousel .carousel-inner .row > .col-sm-3{
 		width:50%;
@@ -112,7 +112,7 @@
 	}
 }
 /* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-width : 320px) and (max-width : 767px) {
+@media only screen and (max-width : 767px) {
 	
 	.users-list-head td.activity, .user-list-item td.activity{
 		display:none;
@@ -149,7 +149,7 @@
 	}
 
 }
-@media only screen and (min-width : 320px) and (max-width : 480px){
+@media only screen and (max-width : 480px){
 	.header-position-c, .ra-question-activity-widget ul li .fav-star, .ra-question-activity-widget ul li .ans-count, .qa-q-list.clean .q-item-head .ans-count, .question-title .fav-parent, .question-tags, #question-meta{
 		display:none;
 	}
