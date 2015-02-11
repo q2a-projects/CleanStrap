@@ -147,7 +147,9 @@ body {
     padding: 0;
     position: relative;
 }
-
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: transparent !important;
+}
 .navbar-default .navbar-form .icon-search {
     display: block;
     font-size: 15px;
