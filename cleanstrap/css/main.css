@@ -4263,7 +4263,7 @@ input[type=checkbox].on-off-checkbox {
 
 .qa-q-list.clean .q-item-head .avatar {
     float: left;
-    margin-right: 15px;
+    margin-right: 10px;
 }
 .qa-q-list.clean .q-item-head .ans-count {
     background: none repeat scroll 0 0 #FFDB3D;
@@ -4290,6 +4290,7 @@ input[type=checkbox].on-off-checkbox {
 .qa-q-list.clean .status-c{
     display: inline-block;
     width: 60px;
+	margin-left: 5px;
 }
 
 
