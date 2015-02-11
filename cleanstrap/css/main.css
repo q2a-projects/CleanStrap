@@ -4160,7 +4160,7 @@ input[type=checkbox].on-off-checkbox {
     box-shadow: none;
 }
 .qa-form-tall-data .cke_toolgroup {
-    border: medium none;
+    border-color: transparent;
 }
 
 #left-position {
