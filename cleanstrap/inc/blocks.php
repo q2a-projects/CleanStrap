@@ -1104,9 +1104,10 @@ class qa_html_theme extends qa_html_theme_base
 		
         $this->output('</div>');
         $this->output('</div>');
-        
+		
+        $pagestate=qa_get_state();
         // this will prevent showing extra sections while Question Edit, close or other action forms
-        if (strpos($this->content['title'], $q_view['raw']['title'])) {
+        if (! (substr($pagestate, 0, 5)=='edit-')) {
             $this->output(base64_decode(qa_opt('cs_ads_below_question_title')));
             
             $this->output('<div class="qa-q-view-main">');
