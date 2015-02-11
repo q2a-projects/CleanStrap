@@ -799,11 +799,12 @@ class qa_html_theme extends qa_html_theme_base
             'avatarheight' => $q_item['raw']['avatarheight']
         );
         
+		$enable_avatar = ((int)qa_opt('avatar_q_page_q_size')>0);
         $avatar_size = ((bool) qa_opt('cs_enable_clean_qlist') ? 20 : 30);
         $timeCode    = $q_item['when'];
         $when        = @$timeCode['prefix'] . @$timeCode['data'] . @$timeCode['suffix'];
         
-        if (isset($q_item['avatar'])) {
+        if ($enable_avatar && isset($q_item['avatar']) && !((bool) qa_opt('cs_enable_clean_qlist'))) {
             $this->output('<div class="asker-avatar">');
             $this->output(cs_get_post_avatar($avatar_arg, $q_item['raw']['userid'], $avatar_size, true));
             $this->output('</div>');
@@ -815,7 +816,7 @@ class qa_html_theme extends qa_html_theme_base
         $this->output('<div class="q-item-head">');
 		
 		
-        if ((bool) qa_opt('cs_enable_clean_qlist')) {
+        if ($enable_avatar && (bool) qa_opt('cs_enable_clean_qlist')) {
 			 
             $this->output('<div class="count-time"><span class="time">' . $when . '</span>');
 			$this->output('<span class="ans-count total-' . $q_item['raw']['acount'] . '">' . $q_item['raw']['acount'] . '</span></div>');
