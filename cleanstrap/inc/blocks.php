@@ -1217,7 +1217,7 @@ class qa_html_theme extends qa_html_theme_base
             if ($k == 'follow')
                 $btn['class'] = 'icon-add-answer';
             
-            $this->output('<button ' . $btn['tags'] . ' class="btn ' . @$btn['class'] . '" title="' . $btn['popup'] . '" type="submit">' . $btn['label'] . '</button>');
+            $this->output('<button ' . $btn['tags'] . ' class="btn ' . @$btn['class'] . '" title="' . @$btn['popup'] . '" type="submit">' . $btn['label'] . '</button>');
         }
 		
 		if (($this->template == 'question') && (qa_get_logged_in_level() >= QA_USER_LEVEL_ADMIN) && (!empty($q_view)) && $show_feat_img){
