@@ -208,9 +208,7 @@ body {
     color: #FFFFFF;
     float: left;
     height: 29px;
-    margin-left: 0;
-    margin-right: 10px;
-    margin-top: 8px;
+    margin: 8px 10px 8px 8px;
 }
 
 #site-header #nav-ask-btn i {
