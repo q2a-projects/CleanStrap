@@ -1285,26 +1285,27 @@ class qa_html_theme extends qa_html_theme_base
     }
     function cs_comment_buttons($c_item)
     {
-        $buttons = $c_item['form']['buttons'];
-        
-        $this->output('<div class="post-button">');
-        foreach ($buttons as $k => $btn) {
-            if ($k == 'edit')
-                $btn['class'] = 'icon-edit';
-            if ($k == 'flag')
-                $btn['class'] = 'icon-flag';
-            if ($k == 'unflag')
-                $btn['class'] = 'icon-flag';
-            if ($k == 'hide')
-                $btn['class'] = 'icon-cancel';
-            if ($k == 'reshow')
-                $btn['class'] = 'icon-eye-open';
-            if ($k == 'comment')
-                $btn['class'] = 'icon-answers';
-            
-            $this->output('<button ' . $btn['tags'] . ' class="btn ' . @$btn['class'] . '" title="' . @$btn['popup'] . '" type="submit">' . @$btn['label'] . '</button>');
-        }
-        $this->output('</div>');
+		if($c_item['form']['buttons']){
+			$buttons = $c_item['form']['buttons'];
+			$this->output('<div class="post-button">');
+			foreach ($buttons as $k => $btn) {
+				if ($k == 'edit')
+					$btn['class'] = 'icon-edit';
+				if ($k == 'flag')
+					$btn['class'] = 'icon-flag';
+				if ($k == 'unflag')
+					$btn['class'] = 'icon-flag';
+				if ($k == 'hide')
+					$btn['class'] = 'icon-cancel';
+				if ($k == 'reshow')
+					$btn['class'] = 'icon-eye-open';
+				if ($k == 'comment')
+					$btn['class'] = 'icon-answers';
+				
+				$this->output('<button ' . $btn['tags'] . ' class="btn ' . @$btn['class'] . '" title="' . @$btn['popup'] . '" type="submit">' . @$btn['label'] . '</button>');
+			}
+			$this->output('</div>');
+		}
     }
     function a_list($a_list)
     {
