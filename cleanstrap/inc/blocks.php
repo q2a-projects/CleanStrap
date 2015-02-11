@@ -1563,6 +1563,10 @@ class qa_html_theme extends qa_html_theme_base
     
     function c_form($c_form)
     {
+		$pagestate=qa_get_state();
+		if(!isset($c_form['collapse']) && empty($pagestate))
+			$c_form['collapse'] = true;
+		
         $this->output('<div class="qa-c-form"' . (isset($c_form['id']) ? (' id="' . $c_form['id'] . '"') : '') . (@$c_form['collapse'] ? ' style="display:none;"' : '') . '>');
         
         $this->output('<div class="asker-avatar no-radius">');
