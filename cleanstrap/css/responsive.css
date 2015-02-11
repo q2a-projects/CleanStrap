@@ -1,13 +1,4 @@
 @media only screen and (max-width : 1024px) {
-	body{
-		margin-top:45px;
-	}
-	#site-header {
-		position: fixed;
-		width: 100%;
-		z-index: 9999;
-		top:0;
-	}	
 	.left-sidebar{
 		bottom: 0;
 		max-width: 0;
@@ -56,7 +47,9 @@
 	}
 }
 @media only screen and (max-width : 979px) {
-
+	#qa-login {
+		margin-bottom: 24px;
+	}
 	.carousel .carousel-inner .row > .col-sm-3{
 		width:50%;
 	}
@@ -113,7 +106,19 @@
 }
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (max-width : 767px) {
-	
+	#site-header {
+		position: fixed;
+		width: 100%;
+		z-index: 9999;
+		top:0;
+	}
+	body{
+		margin-top:45px;
+	}
+	.modal-dialog {
+		background-color: #fff !important;
+		margin: 0 !important;
+	}
 	.users-list-head td.activity, .user-list-item td.activity{
 		display:none;
 	}	
