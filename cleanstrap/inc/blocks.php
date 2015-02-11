@@ -1563,6 +1563,9 @@ class qa_html_theme extends qa_html_theme_base
     
     function c_form($c_form)
     {
+		if(@$_POST['qa']=='ajax' )
+			return;
+
 		$pagestate=qa_get_state();
 		if(!isset($c_form['collapse']) && empty($pagestate))
 			$c_form['collapse'] = true;
