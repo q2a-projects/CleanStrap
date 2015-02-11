@@ -316,6 +316,10 @@ body {
     background: 0 0 rgba(0, 0, 0, 0.04);
 }
 
+
+.icon-cog.qa-nav-cat-link:before {
+    margin-right: 5px;
+}
 .dropdown-menu li:hover .qa-nav-cat-list-2 {
     background: #fff;
 }
@@ -3599,7 +3603,7 @@ input[type=checkbox].on-off-checkbox {
 .navbar-default .navbar-nav.category-nav .category-list-drop li a {
     color: #999999;
     font-size: 12px;
-    padding: 6px 10px;
+    padding: 6px 10px 6px 3px;
     white-space: normal;
 }
 
