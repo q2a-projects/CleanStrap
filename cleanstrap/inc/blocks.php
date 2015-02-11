@@ -1182,44 +1182,45 @@ class qa_html_theme extends qa_html_theme_base
 	}
     function cs_post_buttons($q_view, $show_feat_img=false)
     {
-        $buttons = $q_view['form']['buttons'];
-        
-        if (($this->template == 'question') && (qa_get_logged_in_level() >= QA_USER_LEVEL_ADMIN) && (!empty($q_view)) && $show_feat_img)
-            $buttons['featured'] = array(
-                'tags' => 'id="set_featured"',
-                'label' => !is_featured($q_view['raw']['postid']) ? qa_lang_html('cleanstrap/featured') : qa_lang_html('cleanstrap/unfeatured'),
-                'popup' => !is_featured($q_view['raw']['postid']) ? qa_lang_html('cleanstrap/set_featured') : qa_lang_html('cleanstrap/remove_featured'),
-                'class' => 'icon-star'
-            );
-        
-        $ans_button = @$buttons['answer']['tags'];
-        if (isset($ans_button)) {
-            $onclick                   = preg_replace('/onclick="([^"]+)"/', '', $ans_button);
-            $buttons['answer']['tags'] = $onclick;
-        }
-        
-        $this->output('<div class="post-button clearfix">');
-        foreach ($buttons as $k => $btn) {
-            if ($k == 'edit')
-                $btn['class'] = 'icon-edit';
-            if ($k == 'flag')
-                $btn['class'] = 'icon-flag';
-            if ($k == 'unflag')
-                $btn['class'] = 'icon-flag';
-            if ($k == 'close')
-                $btn['class'] = 'icon-cancel';
-            if ($k == 'hide')
-                $btn['class'] = 'icon-eye-open';
-            if ($k == 'answer')
-                $btn['class'] = 'icon-answer';
-            if ($k == 'comment')
-                $btn['class'] = 'icon-chat';
-            if ($k == 'follow')
-                $btn['class'] = 'icon-add-answer';
-            
-            $this->output('<button ' . $btn['tags'] . ' class="btn ' . @$btn['class'] . '" title="' . @$btn['popup'] . '" type="submit">' . $btn['label'] . '</button>');
-        }
-		
+		$this->output('<div class="post-button clearfix">');
+		if(isset($q_view['form']['buttons'])){
+			$buttons = $q_view['form']['buttons'];
+			
+			if (($this->template == 'question') && (qa_get_logged_in_level() >= QA_USER_LEVEL_ADMIN) && (!empty($q_view)) && $show_feat_img)
+				$buttons['featured'] = array(
+					'tags' => 'id="set_featured"',
+					'label' => !is_featured($q_view['raw']['postid']) ? qa_lang_html('cleanstrap/featured') : qa_lang_html('cleanstrap/unfeatured'),
+					'popup' => !is_featured($q_view['raw']['postid']) ? qa_lang_html('cleanstrap/set_featured') : qa_lang_html('cleanstrap/remove_featured'),
+					'class' => 'icon-star'
+				);
+			
+			$ans_button = @$buttons['answer']['tags'];
+			if (isset($ans_button)) {
+				$onclick                   = preg_replace('/onclick="([^"]+)"/', '', $ans_button);
+				$buttons['answer']['tags'] = $onclick;
+			}
+			
+			foreach ($buttons as $k => $btn) {
+				if ($k == 'edit')
+					$btn['class'] = 'icon-edit';
+				if ($k == 'flag')
+					$btn['class'] = 'icon-flag';
+				if ($k == 'unflag')
+					$btn['class'] = 'icon-flag';
+				if ($k == 'close')
+					$btn['class'] = 'icon-cancel';
+				if ($k == 'hide')
+					$btn['class'] = 'icon-eye-open';
+				if ($k == 'answer')
+					$btn['class'] = 'icon-answer';
+				if ($k == 'comment')
+					$btn['class'] = 'icon-chat';
+				if ($k == 'follow')
+					$btn['class'] = 'icon-add-answer';
+				
+				$this->output('<button ' . $btn['tags'] . ' class="btn ' . @$btn['class'] . '" title="' . @$btn['popup'] . '" type="submit">' . $btn['label'] . '</button>');
+			}
+		}
 		if (($this->template == 'question') && (qa_get_logged_in_level() >= QA_USER_LEVEL_ADMIN) && (!empty($q_view)) && $show_feat_img){
 			$this->output('
 				<div class="btn-group featured-image-btn">
@@ -1285,7 +1286,7 @@ class qa_html_theme extends qa_html_theme_base
     }
     function cs_comment_buttons($c_item)
     {
-		if($c_item['form']['buttons']){
+		if(isset($c_item['form']['buttons'])){
 			$buttons = $c_item['form']['buttons'];
 			$this->output('<div class="post-button">');
 			foreach ($buttons as $k => $btn) {
