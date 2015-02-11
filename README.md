@@ -3,7 +3,7 @@
 ## Description
 [CleanStrap](http://qa-themes.com/themes/cleanstrap "Q2A CleanStrao Theme Features")  is a free and open-source **Responsive Question2Answer Theme** with many advanced features such as **Drag & Drop widget Builder** with 16 new widgets and lots of new sections to hold them. also it comes with many options to let you change nearly any aspect of your theme and completely customize your site.
 
-*Theme Demo - coming soon* - **[Theme's Features](http://qa-themes.com/themes/cleanstrap "CleanStrap Theme's features")**
+**[Theme Demo](http://demo.qa-themes.com/cleanstrap/ "CleanStrap Theme's Demo")** - **[Theme's Features](http://qa-themes.com/themes/cleanstrap "CleanStrap Theme's features")**
 
 ## Installation
 
