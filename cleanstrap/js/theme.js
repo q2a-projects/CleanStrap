@@ -125,14 +125,6 @@ function cs_ajax_loading($elm){
 		$(this).remove();
 	});
 }
-function cs_toggle_editor(){	
-	$( '#q_doanswer' ).on('click', function(event) {
-		event.preventDefault();
-		$('html, body').animate({
-			scrollTop: $('#anew').offset().top
-		}, 500);
-	});
-}
 function cs_favorite_click()
 {
 	$('body').delegate( '.fav-btn', 'click', function() {
@@ -577,7 +569,6 @@ $(document).ready(function(){
 	dropdown_override();
 	cs_slide_menu();
 	cs_vote_click();
-	cs_toggle_editor();
 	cs_favorite_click();
 	cs_tab();
 	cs_widgets();
@@ -588,9 +579,6 @@ $(document).ready(function(){
 	cs_check_site_status_size();
 	if ($('.ra-ask-widget').length>0)
 		cs_ask_box_autocomplete();
-	
-	if ((typeof qa_wysiwyg_editor_config == 'object') && $('body').hasClass('qa-template-question'))
-		qa_ckeditor_a_content=CKEDITOR.replace('a_content', window.qa_wysiwyg_editor_config);
 	
 	$("#q_meta_remove_featured_image").click(function(e){
 		$("#featured_image").val("");
@@ -623,8 +611,6 @@ $(document).ready(function(){
 		});
 	}
 	
-	//$('#ajax-item').css('min-height', $(window).height());
-	
 	$('.question-label').click(function(){
 		$(this).next().slideToggle()
 	});
@@ -633,29 +619,6 @@ $(document).ready(function(){
 		$('.search-query').focus();
 	});
 	
-/* 	cs_ajax_sub_menu('.qa-nav-sub-recent a');
-	cs_ajax_sub_menu('.qa-nav-sub-hot a');
-	cs_ajax_sub_menu('.qa-nav-sub-votes a');
-	cs_ajax_sub_menu('.qa-nav-sub-answers a');
-	cs_ajax_sub_menu('.qa-nav-sub-views a');
-	cs_ajax_sub_menu('.qa-nav-sub-by-answers a');
-	cs_ajax_sub_menu('.qa-nav-sub-by-selected a');
-	cs_ajax_sub_menu('.qa-nav-sub-by-upvotes a'); */
-	
-	cs_sparkline('.sparkline');
-	
-	//cs_load_items();
-	
-	/* $(window).resize(function(){
-		cs_ajax_item_resize();
-		cs_float_left()
-	}); */
-	
-	//uncomment this code if you want to use default editor
-/* 	if ((typeof qa_wysiwyg_editor_config == 'object') && $('body').hasClass('qa-template-question'))
-		qa_ckeditor_a_content=CKEDITOR.replace('a_content', window.qa_wysiwyg_editor_config); */
-	//$('.float-nav').css('min-height', $(window).height());
-	//$('#left-sidebar').css('min-height', $(window).height());
 	
 	$('#left-position .widget-title').click(function(){
 		$(this).next().slideToggle(200);

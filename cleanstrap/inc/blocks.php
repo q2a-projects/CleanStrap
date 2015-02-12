@@ -1196,12 +1196,6 @@ class qa_html_theme extends qa_html_theme_base
 					'class' => 'icon-star'
 				);
 			
-			$ans_button = @$buttons['answer']['tags'];
-			if (isset($ans_button)) {
-				$onclick                   = preg_replace('/onclick="([^"]+)"/', '', $ans_button);
-				$buttons['answer']['tags'] = $onclick;
-			}
-			
 			foreach ($buttons as $k => $btn) {
 				if ($k == 'edit')
 					$btn['class'] = 'icon-edit';
@@ -1323,7 +1317,6 @@ class qa_html_theme extends qa_html_theme_base
             $this->output('</div> <!-- END qa-a-list -->', '');
         }
         $this->page_links();
-        $this->answer_form();	
     }
     function a_list_item($a_item)
     {
@@ -1410,8 +1403,9 @@ class qa_html_theme extends qa_html_theme_base
         elseif (strpos($key, 'q_list') === 0)
             $this->q_list_and_form($part);
         elseif (strpos($key, 'q_view') === 0)
-            $this->q_view($part); /* elseif (strpos($key, 'a_form')===0)
-        $this->a_form($part); */ 
+            $this->q_view($part); 
+		elseif (strpos($key, 'a_form')===0)
+			$this->a_form($part); 
         elseif (strpos($key, 'a_list') === 0)
             $this->a_list($part);
         elseif (strpos($key, 'ranking') === 0)
@@ -1501,19 +1495,11 @@ class qa_html_theme extends qa_html_theme_base
         $this->output(ob_get_clean());
     }
     
-    function answer_form()
-    {
-        if (isset($this->content['a_form'])) {
-            $this->output('<div class="answer-form">');
-            $this->a_form($this->content['a_form']);
-            $this->output('</div>');
-        }
-    }
-    
     function a_form($a_form)
     {
-        $this->output('<div class="qa-a-form"' . (isset($a_form['id']) ? (' id="' . $a_form['id'] . '"') : '') . '>');
-        
+        $this->output('<div class="qa-a-form"' . (isset($a_form['id']) ? (' id="' . $a_form['id'] . '"') : '') .
+			(@$a_form['collapse'] ? ' style="display:none;"' : '').'>');
+        $this->output('<div class="answer-form">');
         if (isset($a_form)) {
 			$this->output('<div class="big-s-avatar avatar">' . cs_get_avatar(qa_get_logged_in_handle(), 40) . '</div>');        
 			$this->output('<div class="q-cont-right">');
@@ -1529,6 +1515,7 @@ class qa_html_theme extends qa_html_theme_base
         } else {
             $this->output('<div class="login-to-answer">' . $a_form['title'] . '</div>');
         }
+		 $this->output('</div>');
         $this->output('</div> <!-- END qa-a-form -->', '');
     }
     
@@ -1563,7 +1550,7 @@ class qa_html_theme extends qa_html_theme_base
     
     function c_form($c_form)
     {
-		if(@$_POST['qa']=='ajax' )
+		if(@$_POST['qa']=='ajax' or empty($c_form))
 			return;
 
 		$pagestate=qa_get_state();
