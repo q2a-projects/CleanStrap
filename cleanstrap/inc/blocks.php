@@ -683,7 +683,7 @@ class qa_html_theme extends qa_html_theme_base
 			$this->sidepanel();
 		}
 		$this->output('</div>');
-		$this->cs_position('Content Bottom');
+		$this->cs_position('Bottom');
 		$this->footer();
     }
     function title() // add RSS feed icon after the page title
