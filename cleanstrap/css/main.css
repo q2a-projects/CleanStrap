@@ -2159,14 +2159,6 @@ input.qa-form-wide-number{
     text-align: center;
 }
 
-.qa-suggest-next a {
-
-}
-
-.qa-suggest-next a:hover {
-    background: #333;
-}
-
 #site-footer {
     margin: 20px 0 0;
     padding: 20px;
@@ -4089,6 +4081,9 @@ input[type=checkbox].on-off-checkbox {
     border-right: 1px solid #EEEEEE;
     margin-right: 5px;
     padding-right: 5px;
+}
+.qa-q-item-flags {
+    color: #d22;
 }
 .list-meta{
     color: #AAAAAA;
