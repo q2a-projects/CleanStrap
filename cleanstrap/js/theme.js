@@ -263,27 +263,26 @@ function cs_slide_menu(){
 
 	$(".slide-mobile-menu").on("click", function(e){  
 		e.preventDefault();  
-		var distance = $('.qa-main').css('margin-left');  
-		if(distance == "auto" || distance == "10px") {  
-			$(this).addClass("open");  
-			openSidepage();  
+		if($(this).hasClass( "open" )) {  
+			closeSidepage(); 
 		} else {  
-			closeSidepage();  
+			openSidepage();  
 		}  
+		$(this).toggleClass("open");  
 	});
 
 	function openSidepage() {
-		$('#nav-top .qa-nav-main').animate({'left':0}, 200);
+		$('#nav-top .qa-nav-main').animate({'left':0,'width': 190}, 200);
 		$('.left-sidebar').animate({'max-width':180}, 200);
-		$('.qa-main').animate({'width': $('.qa-main').width(), 'margin-left':190},200);
-		$('.qa-nav-sub').animate({'width': $('.qa-main').width(), 'margin-left':190},200);
+		$('.qa-main').animate({'width': $('.qa-main').width(), 'left':190,'position':'fixed'},200);
+		$('.qa-nav-sub').animate({'width': $('.qa-main').width(), 'left':190},200);
 		$('body').addClass('menu-open');
 	}
-	function closeSidepage() {		
-		$('#nav-top .qa-nav-main').animate({'left':'-180'}, 200, function(){$(this).removeAttr('style')});
+	function closeSidepage() {
+		$('#nav-top .qa-nav-main').animate({'left':'-180','width': 'auto'}, 200, function(){$(this).removeAttr('style')});
 		$('.left-sidebar, #nav-top .qa-nav-main').animate({'max-width':0}, 200, function(){$(this).removeAttr('style')});
-		$('.qa-main').animate({'width': 'auto', 'margin-left':10}, 200, function(){$(this).removeAttr('style'); $('body').removeClass('menu-open');});
-		$('.qa-nav-sub').animate({'width': 'auto', 'margin-left':10}, 200, function(){$(this).removeAttr('style'); $('body').removeClass('menu-open');});
+		$('.qa-main').animate({'width': 'auto', 'left':10}, 200, function(){$(this).removeAttr('style'); $('body').removeClass('menu-open');});
+		$('.qa-nav-sub').animate({'width': 'auto', 'left':10}, 200, function(){$(this).removeAttr('style'); $('body').removeClass('menu-open');});
 	}
 }
 function cs_float_left(){
