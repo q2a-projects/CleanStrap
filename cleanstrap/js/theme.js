@@ -260,20 +260,31 @@ function cs_load_items(){
 } */
 
 function cs_slide_menu(){
-	$('.slide-mobile-menu').toggle(
-		function() {
-			$('#nav-top .qa-nav-main').animate({'left':0}, 200);
-			$('.left-sidebar').animate({'max-width':180}, 200);
-			$('.qa-main').animate({'width': $('.qa-main').width(), 'margin-left':190},200);
-			$('.qa-nav-sub').animate({'width': $('.qa-main').width(), 'margin-left':190},200);
-			$('body').addClass('menu-open');
-		}, function() {			
-			$('#nav-top .qa-nav-main').animate({'left':'-180'}, 200, function(){$(this).removeAttr('style')});
-			$('.left-sidebar, #nav-top .qa-nav-main').animate({'max-width':0}, 200, function(){$(this).removeAttr('style')});
-			$('.qa-main').animate({'width': 'auto', 'margin-left':10}, 200, function(){$(this).removeAttr('style'); $('body').removeClass('menu-open');});
-			$('.qa-nav-sub').animate({'width': 'auto', 'margin-left':10}, 200, function(){$(this).removeAttr('style'); $('body').removeClass('menu-open');});
-		}
-	);
+
+	$(".slide-mobile-menu").on("click", function(e){  
+		e.preventDefault();  
+		var distance = $('.qa-main').css('margin-left');  
+		if(distance == "auto" || distance == "10px") {  
+			$(this).addClass("open");  
+			openSidepage();  
+		} else {  
+			closeSidepage();  
+		}  
+	});
+
+	function openSidepage() {
+		$('#nav-top .qa-nav-main').animate({'left':0}, 200);
+		$('.left-sidebar').animate({'max-width':180}, 200);
+		$('.qa-main').animate({'width': $('.qa-main').width(), 'margin-left':190},200);
+		$('.qa-nav-sub').animate({'width': $('.qa-main').width(), 'margin-left':190},200);
+		$('body').addClass('menu-open');
+	}
+	function closeSidepage() {		
+		$('#nav-top .qa-nav-main').animate({'left':'-180'}, 200, function(){$(this).removeAttr('style')});
+		$('.left-sidebar, #nav-top .qa-nav-main').animate({'max-width':0}, 200, function(){$(this).removeAttr('style')});
+		$('.qa-main').animate({'width': 'auto', 'margin-left':10}, 200, function(){$(this).removeAttr('style'); $('body').removeClass('menu-open');});
+		$('.qa-nav-sub').animate({'width': 'auto', 'margin-left':10}, 200, function(){$(this).removeAttr('style'); $('body').removeClass('menu-open');});
+	}
 }
 function cs_float_left(){
 	var winwidth 	= $(window).width();
