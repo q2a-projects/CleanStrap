@@ -175,7 +175,7 @@ class qa_html_theme extends qa_html_theme_base
     {
         $this->cs_position('Top');
         
-        $this->output('<header id="site-header" class="clearfix">', '<div class="navbar-default" role="navigation">');
+        $this->output('<header id="site-header" class="clearfix">', '<div class="qa-navbar navbar-default' . (qa_opt('cs_nav_fixed')?' navbar-fixed-top ':'') . '" role="navigation">');
         $this->output('<a href="#" class="slide-mobile-menu icon-list"></a>');
         $this->logo();
         
