@@ -101,7 +101,7 @@
 					}elseif($type=='A'){
 						$output .= '<div class="big-ans-count pull-left icon-answer"></div>';
 					}elseif($type=='C'){
-						$output .= '<div class="big-ans-count pull-left icon-comment"></div>';
+						$output .= '<div class="big-ans-count pull-left icon-comment icon-comments"></div>';
 					}
 					$output .= '<div class="list-right">';
 					$timeCode = qa_when_to_html(  strtotime( $p['created'] ) ,7);
