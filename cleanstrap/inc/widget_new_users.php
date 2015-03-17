@@ -18,6 +18,12 @@
 						'type' => 'number',
 						'tags' => 'name="cs_nu_avatar"',
 						'value' => '30',
+					),	
+					'cs_nu_with_avatar' => array(
+						'label' => 'Avatars Filter: ',
+						'type' => 'select',
+						'tags' => 'name="cs_nu_with_avatar"',
+						'options' => array('1' => 'Show All Users', '2'=> 'Only ones with uploaded Avatars'),
 					)	
 				),
 
@@ -69,7 +75,7 @@
 			
 			return $allow;
 		}
-		function cs_new_users($limit, $size){
+		function cs_new_users($limit, $size, $widget_opt){
 			$output = '<ul class="users-list clearfix">';
 			if (defined('QA_FINAL_WORDPRESS_INTEGRATE_PATH')){
 				global $wpdb;
@@ -84,10 +90,11 @@
 				}
 				
 			}else{
-				if ( qa_opt('avatar_default_show') && strlen(qa_opt('avatar_default_blobid')) )
-					$users = qa_db_read_all_assoc(qa_db_query_sub("SELECT * FROM ^users ORDER BY created DESC LIMIT #", $limit)); //refresh every 10 minutes
-				else if ( qa_opt('avatar_allow_upload') )
+				if( qa_opt('avatar_allow_upload') && @$widget_opt['cs_nu_with_avatar'] )
 					$users = qa_db_read_all_assoc(qa_db_query_sub("SELECT * FROM ^users WHERE avatarblobid IS NOT NULL ORDER BY created DESC LIMIT #", $limit));	
+				elseif ( qa_opt('avatar_allow_gravatar') || ( qa_opt('avatar_default_show') && strlen(qa_opt('avatar_default_blobid')) ) )
+					$users = qa_db_read_all_assoc(qa_db_query_sub("SELECT * FROM ^users ORDER BY created DESC LIMIT #", $limit)); //refresh every 10 minutes
+					
 				foreach($users as $u){
 					if (isset($u['handle'])){
 						$handle = $u['handle'];
@@ -112,7 +119,7 @@
 				$themeobject->output('<h3 class="widget-title">New Users</h3>');
 				
 			$themeobject->output('<div class="ra-new-users-widget">');
-			$themeobject->output($this->cs_new_users((int)@$widget_opt['cs_nu_count'], (int)@$widget_opt['cs_nu_avatar']));
+			$themeobject->output($this->cs_new_users((int)@$widget_opt['cs_nu_count'], (int)@$widget_opt['cs_nu_avatar'], $widget_opt));
 			$themeobject->output('</div>');
 		}
 	
