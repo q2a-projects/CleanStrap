@@ -852,7 +852,8 @@ class qa_html_theme extends qa_html_theme_base
     function footer()
     {
         $this->output('<footer id="site-footer" class="clearfix">');
-		$this->nav('main');
+		if(qa_opt('cs_enable_footer_nav'))
+			$this->nav('main');
 		$this->nav('footer');
         $this->get_social_links();
         

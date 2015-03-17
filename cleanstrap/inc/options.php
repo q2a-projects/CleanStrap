@@ -183,10 +183,10 @@ class qa_html_theme_layer extends qa_html_theme_base
                 qa_opt('cs_enable_adv_list', (bool) qa_post_text('cs_enable_adv_list'));
                 qa_opt('cs_ads_below_question_title', base64_encode($_REQUEST['cs_ads_below_question_title']));
                 qa_opt('cs_ads_after_question_content', base64_encode($_REQUEST['cs_ads_after_question_content']));
-                
+
                 // footer							
+                qa_opt('cs_enable_footer_nav', (bool) qa_post_text('cs_enable_footer_nav'));
                 qa_opt('cs_footer_copyright', qa_post_text('cs_footer_copyright'));
-                
                 
                 $saved = true;
                 $saved = 'Settings saved';
@@ -1248,6 +1248,20 @@ class qa_html_theme_layer extends qa_html_theme_base
 	</div>
 	<div class="qa-part-form-tc-footer">
 	<table class="qa-form-tall-table options-table">
+		<tbody>
+			<tr>
+				<th class="qa-form-tall-label">
+					Footer Navigation Menu
+					<span class="description">Add main navigation to footer too</span>
+				</th>
+				<td class="qa-form-tall-label">
+					<div class="on-off-checkbox-container">
+						<input type="checkbox" class="on-off-checkbox" value="1"' . (qa_opt('cs_enable_footer_nav') ? ' checked=""' : '') . ' id="cs_enable_footer_nav" name="cs_enable_footer_nav">
+						<label for="cs_enable_footer_nav"></label>
+					</div>
+				</td>
+			</tr>
+		</tbody>
 		<tbody>
 			<tr>
 				<th class="qa-form-tall-label">
