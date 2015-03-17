@@ -82,6 +82,7 @@ function cs_user_data($handle){
 }	
 
 function cs_get_avatar($handle, $size = 40, $html =true){
+
 	$userid = qa_handle_to_userid($handle);
 	if(defined('QA_WORDPRESS_INTEGRATE_PATH')){
 		$img_html = get_avatar( qa_get_user_email($userid), $size);
@@ -89,10 +90,8 @@ function cs_get_avatar($handle, $size = 40, $html =true){
 		$img_html = qa_get_external_avatar_html($userid, $size, false);
 	}else{
 		if (!isset($handle)){
-			if (qa_opt('avatar_allow_gravatar'))
-				$img_html = qa_get_gravatar_html(qa_get_user_email($userid), $size);
-			else if ( qa_opt('avatar_allow_upload') && qa_opt('avatar_default_show') && strlen(qa_opt('avatar_default_blobid')) )
-				$img_html = qa_get_avatar_blob_html(qa_opt('avatar_default_blobid'), qa_opt('avatar_default_width'), qa_opt('avatar_default_height'), $size);
+			if ( (qa_opt('avatar_allow_gravatar')||qa_opt('avatar_allow_upload')) && qa_opt('avatar_default_show') && strlen(qa_opt('avatar_default_blobid')) )
+				$html=qa_get_avatar_blob_html(qa_opt('avatar_default_blobid'), qa_opt('avatar_default_width'), qa_opt('avatar_default_height'), $size, 0);
 			else
 				$img_html = '';
 		}else{
@@ -100,8 +99,8 @@ function cs_get_avatar($handle, $size = 40, $html =true){
 			if(empty($f['avatarblobid'])){
 				if (qa_opt('avatar_allow_gravatar'))
 					$img_html = qa_get_gravatar_html(qa_get_user_email($userid), $size);
-				else if ( qa_opt('avatar_allow_upload') && qa_opt('avatar_default_show') && strlen(qa_opt('avatar_default_blobid')) )
-					$img_html = qa_get_avatar_blob_html(qa_opt('avatar_default_blobid'), qa_opt('avatar_default_width'), qa_opt('avatar_default_height'), $size);
+				elseif ( (qa_opt('avatar_allow_gravatar')||qa_opt('avatar_allow_upload')) && qa_opt('avatar_default_show') && strlen(qa_opt('avatar_default_blobid')) )
+					$img_html = qa_get_avatar_blob_html(qa_opt('avatar_default_blobid'), qa_opt('avatar_default_width'), qa_opt('avatar_default_height'), $size, 0);
 				else
 					$img_html = '';
 			} else
