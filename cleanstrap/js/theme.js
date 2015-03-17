@@ -644,4 +644,6 @@ $(document).ready(function(){
 		$('#nav-top .qa-nav-main').removeAttr('style');
 		cs_check_site_status_size();
 	});
+	
+	cs_sparkline('.sparkline');
 });
