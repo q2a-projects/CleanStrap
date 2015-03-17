@@ -2,8 +2,25 @@ html body {
     direction: rtl;
     text-align: right;
 }
-.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11 {
     float: right;
+}
+
+
+/* Widgets */
+.widget .widget-title a {
+    float: left;
+}
+.ra-ask-widget .input-group-btn {
+    padding: 0 10px 0 0;
+}
+.icon-question::before, .icon-question::before {
+    float: left;
+    padding: 5px 28px 0 0;
+}
+.widget .user-post-title a {
+    float: left;
+    margin: 0 0 0 -5px;
 }
 
 /* Header */
@@ -15,6 +32,14 @@ html body {
 }
 #site-header .navbar-form {
     float: left !important;
+	margin: 7px 0 0 15px;
+	position: relative;
+}
+#site-header .navbar-form .form-control:focus {
+    border: 1px solid rgba(0, 0, 0, 0.4) !important;
+}
+#nav-top.qa-template-admin .qa-nav-sub li {
+    float: right;
 }
 .nav.navbar-nav.category-nav.pull-left {
     float: right !important;
@@ -64,7 +89,6 @@ html body {
     float: right;
 }
 #site-header .navbar-form {
-    left: 50px;
     right: inherit !important;
 }
 #site-header .navbar-form .form-control.search-query {
