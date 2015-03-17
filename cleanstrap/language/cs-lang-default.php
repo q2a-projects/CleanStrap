@@ -81,6 +81,13 @@
 		'no_answers' => 'No Answers posted yet!',
 		'no_comments' => 'No Comments posted yet!',
 		'show_all' => 'Show all',
+		'askbox_ask' => 'Ask',
+		'askbox_placeholder' => 'Your question in one sentence',
+		'top_users' => 'Top Contributors',
+		'site_status' => 'Site Status',
+		'users_questions' => "^'s Questions",
+		'users_answers' => "^'s Answers",
+		'users_comments' => "^'s Comments",
 	);
 	
 

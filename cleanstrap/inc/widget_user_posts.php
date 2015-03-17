@@ -138,18 +138,22 @@
 			$widget_opt = @$themeobject->current_widget['param']['options'];
 			$handle = $qa_content['raw']['account']['handle'];
 			
-			if($widget_opt['cs_up_type'] == 'Q')
-				$type_title = 'questions';
-			elseif($widget_opt['cs_up_type'] == 'A')
-				$type_title = 'answers';
-			else
-				$type_title = 'comments';
-			
+			if($widget_opt['cs_up_type'] == 'Q'){
+				$url = 'questions';
+				$type_title = qa_lang_sub('cleanstrap/users_questions', $handle);
+			}elseif($widget_opt['cs_up_type'] == 'A'){
+				$url = 'answers';
+				$type_title = qa_lang_sub('cleanstrap/users_answers', $handle);
+			}else{
+				$url = 'comments';
+				$type_title = qa_lang_sub('cleanstrap/users_comments', $handle);
+			}
+				
 			if($widget_opt['cs_up_type'] != 'C')
-				$type_link = '<a class="see-all" href="'.qa_path_html('user/'.$handle.'/'.$type_title).'">' . qa_lang_html('cleanstrap/show_all') . '</a>';
+				$type_link = '<a class="see-all" href="'.qa_path_html('user/'.$handle.'/'.$url).'">' . qa_lang_html('cleanstrap/show_all') . '</a>';
 			
 			if(@$themeobject->current_widget['param']['locations']['show_title'])
-				$themeobject->output('<h3 class="widget-title user-post-title">'.cs_name($handle).'\'s '.$type_title.@$type_link.'</h3>');
+				$themeobject->output('<h3 class="widget-title user-post-title">' . $type_title.@$type_link.'</h3>');
 				
 			$themeobject->output('<div class="ra-ua-widget">');
 			$themeobject->output($this->cs_user_post_list($handle, @$widget_opt['cs_up_type'],  (int)$widget_opt['cs_up_count']));

@@ -61,9 +61,9 @@
 			$themeobject->output(
 				'<form action="'.qa_path_html('ask', $params).'" method="post">',
 					'<div class="input-group">
-						  <input type="text"  name="title" class="form-control" id="ra-ask-search" placeholder="Your question in one sentence">
+						  <input type="text"  name="title" class="form-control" id="ra-ask-search" placeholder="' . qa_lang_html('cleanstrap/askbox_placeholder') . '">
 						  <span class="input-group-btn">
-							<button class="icon-question btn" type="submit">Ask</button>
+							<button class="icon-question btn" type="submit">' . qa_lang_html('cleanstrap/askbox_ask') . '</button>
 						  </span>
 					</div>',
 					'<input type="hidden" value="1" name="doask1">',
