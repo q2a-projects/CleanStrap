@@ -343,7 +343,7 @@ class qa_html_theme extends qa_html_theme_base
 ?>" />
 							</div>
 								
-								<label class="checkbox inline">
+								<label class="inline">
 									<input type="checkbox" name="remember" id="qa-rememberme" value="1"> <?php
             echo qa_lang_html('users/remember');
 ?>
