@@ -2,6 +2,9 @@ html body {
     direction: rtl;
     text-align: right;
 }
+.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+    float: right;
+}
 
 /* Header */
 #site-header .site-logo {
@@ -54,7 +57,19 @@ html body {
     float: right !important;
     margin: 5px 0 0 5px !important;
 }
-
+#site-header .navbar-default .login-register {
+    float: left;
+}
+.slide-mobile-menu.icon-list {
+    float: right;
+}
+#site-header .navbar-form {
+    left: 50px;
+    right: inherit !important;
+}
+#site-header .navbar-form .form-control.search-query {
+    padding: 0 5px 0 35px;
+}
 
 /* navigation */
 #site-body .left-sidebar , .left-sidebar .float-nav,.float-nav .qa-nav-main {
@@ -63,6 +78,7 @@ html body {
 .left-sidebar .qa-nav-main-list .qa-nav-main-item .qa-nav-main-link:before {
     margin: -10px 0 -10px 5px !important;
 }
+
 /* question lists */
 a.feed-link {
     float: left !important;
@@ -90,6 +106,19 @@ a.feed-link {
     border-top-right-radius: 0 !important;
 	border-bottom-left-radius: 4px !important;
     border-top-left-radius: 4px !important;
+}
+.qa-q-list.clean .q-item-head .avatar {
+    float: right;
+    margin: 0 0 0 5px;
+}
+.qa-q-list.clean .q-item-head .time {
+    float: left;
+}
+.qa-q-list.clean .q-item-head .ans-count {
+    float: left;
+}
+.qa-q-list.clean .qa-q-list-item .qa-q-item-title {
+    float: none;
 }
 
 /* question page */
@@ -219,6 +248,9 @@ blockquote {
 .top-users-list .avatar {
     float: right !important;
     margin: 0 0 0 5px !important;
+}
+.top-users-list .top-user-data .points {
+    float: left;
 }
 /* users page */
 .page-users-list .user-card-inner .activity {
