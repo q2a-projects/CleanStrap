@@ -159,7 +159,7 @@
 		display:none;
 	}
 	.navbar-site-logo {
-		display: none;
+		display: none !important;
 	}
 	#site-header .site-logo a {
 		display: block;
