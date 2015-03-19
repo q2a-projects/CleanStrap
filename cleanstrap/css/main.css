@@ -4529,6 +4529,21 @@ input[type=checkbox].on-off-checkbox {
     padding: 5px 10px;
 }
 
+.qa-notice {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #f77;
+    display: block;
+    left: 0;
+    margin: 1px 0;
+    padding: 0 2px;
+    position: absolute;
+    top: 47px;
+    width: 100%;
+    z-index: 2;
+}
+.qa-notice-close-button {
+    float: right;
+}
 .dropdown-menu li.user-nav-themeoptions {
     border-bottom: 1px solid #eee;
     margin-bottom:3px;
