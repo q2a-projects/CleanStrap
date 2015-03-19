@@ -359,7 +359,7 @@ class qa_html_theme extends qa_html_theme_base
 				echo qa_html(qa_get_form_security_code('login'));
 	?>"/>
 									<input type="submit" value="<?php
-				echo $this->content['navigation']['user']['login']['label'];
+				echo qa_lang_html('cleanstrap/login');
 	?>" id="qa-login" name="dologin" class="btn btn-primary btn-large btn-block" />
 								</form>
 								</div>

@@ -3832,6 +3832,10 @@ input[type=checkbox].on-off-checkbox {
     padding: 12px;
 }
 
+#loginform label {
+    margin: 16px 5px;
+}
+
 .site-status-inner .bar-float, .site-status-inner .acti-indicators {
     float: left;
     width: 50%;
