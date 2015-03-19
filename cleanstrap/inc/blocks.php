@@ -291,8 +291,8 @@ class qa_html_theme extends qa_html_theme_base
 ?>"></a>
 			<?php
         }
-        unset($this->content['navigation']['user']['login']);
-        unset($this->content['navigation']['user']['register']);
+        //unset($this->content['navigation']['user']['login']);
+        //unset($this->content['navigation']['user']['register']);
         $this->output(ob_get_clean());
         
     }
