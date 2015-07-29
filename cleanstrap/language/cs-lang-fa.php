@@ -64,7 +64,11 @@
 		'all_questions' => 'تمام سوالات',
 		'all_answers' => 'تمام پاسخ ها',
 		'x_activities' => 'فعالیت های ^',
-		'ans' => 'پاسخ',
+		'que' => 'سوال', // short for Question, used in Site Stat widget
+		'ans' => 'پاسخ', // short for Answer
+		'com' => 'نظر', // short for Comment
+		'ua' => 'ب. ج', // short for Unanswered 
+		'us' => 'ب. م', // short for Unselected 
 		'related_questions' => 'سوالات مربوط',
 		'tags' => 'برچسب ها',
 		'unfeatured' => 'غیر ویژه',

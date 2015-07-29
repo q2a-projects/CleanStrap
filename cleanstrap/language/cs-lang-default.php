@@ -51,7 +51,7 @@
 		'no_results_detail' => 'Sorry we cannot display anything, query returns nothings.',
 		'latest_answers' => 'Latest Answers',
 		'latest_comments' => 'Latest Comments',
-		'category_favourited' => 'You have added this category to your favourite',
+		'category_favourited' => 'You have added this category to your favourites',
 		'delete' => 'Delete',
 		'upload' => 'Upload',
 		'categories' => 'Categories',
@@ -65,7 +65,11 @@
 		'all_questions' => 'All questions',
 		'all_answers' => 'All answers',
 		'x_activities' => '^\'s activities',
-		'ans' => 'ans',
+		'que' => 'que', // short for Question, used in Site Stat widget
+		'ans' => 'ans', // short for Answer
+		'com' => 'com', // short for Comment
+		'ua' => 'ua', // short for Unanswered 
+		'us' => 'us', // short for Unselected 
 		'related_questions' => 'Related questions',
 		'tags' => 'Tags',
 		'unfeatured' => 'Un-feature',

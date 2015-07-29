@@ -65,7 +65,11 @@
 		'all_questions' => 'Все вопросы',
 		'all_answers' => 'Все ответы',
 		'x_activities' => '^ активность',
-		'ans' => 'ответ',
+		'que' => 'que', // short for Question, used in Site Stat widget
+		'ans' => 'ответ', // short for Answer
+		'com' => 'com', // short for Comment
+		'ua' => 'ua', // short for Unanswered 
+		'us' => 'us', // short for Unselected 
 		'related_questions' => 'Похожие вопросы',
 		'tags' => 'теги',
 		'unfeatured' => 'Un-feature',

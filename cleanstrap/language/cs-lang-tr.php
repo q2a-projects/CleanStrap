@@ -65,7 +65,11 @@
 		'all_questions' => 'Tüm Sorular',
 		'all_answers' => 'Tüm Cevaplar',
 		'x_activities' => '^ - Yaptığınız Faaliyetler',
-		'ans' => 'ans',
+		'que' => 'que', // short for Question, used in Site Stat widget
+		'ans' => 'ans', // short for Answer
+		'com' => 'com', // short for Comment
+		'ua' => 'ua', // short for Unanswered 
+		'us' => 'us', // short for Unselected 
 		'related_questions' => 'İlgili Sorular',
 		'tags' => 'Etiketler',
 		'unfeatured' => 'Önemsiz',
