@@ -101,7 +101,7 @@
 			$widget_opt = $themeobject->current_widget['param']['options'];
 
 			if(@$themeobject->current_widget['param']['locations']['show_title'])
-				$themeobject->output('<h3 class="widget-title">' . qa_lang_html('cleanstrap/askbox_placeholder') . '</h3>');
+				$themeobject->output('<h3 class="widget-title">' . qa_lang_html('cleanstrap/top_users') . '</h3>');
 				
 			$themeobject->output('<div class="ra-tags-widget">');
 			$themeobject->output($this->cs_top_users((int)@$widget_opt['cs_tc_count'], (int)@$widget_opt['cs_tc_avatar']));
