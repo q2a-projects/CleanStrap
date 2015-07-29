@@ -2637,7 +2637,7 @@ input[type=checkbox].on-off-checkbox {
 }
 
 #ra-widgets .select-template .checkbox input {
-    margin: 0 6px 0 0;
+    margin: 0 6px 0 -20px;
 }
 
 .qa-form-tall-label .description {
