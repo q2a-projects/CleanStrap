@@ -274,10 +274,12 @@ class qa_html_theme extends qa_html_theme_base
                 }
             }
 			
-           // if (isset($this->content['navigation']['user']['logout']['url'])) {
-                $link = qa_opt('site_url') . "logout";
-                echo "<li><a class='icon-switch' href = '$link'> " . qa_lang_html('cleanstrap/logout') . " </a></li>";
-           // }
+			if (isset($this->content['navigation']['user']['logout']['url']))
+				$link = $this->content['navigation']['user']['logout']['url'];
+            else
+				$link = qa_opt('site_url') . "logout";
+            echo "<li><a class='icon-switch' href = '$link'> " . qa_lang_html('cleanstrap/logout') . " </a></li>";
+
 ?>
 						</ul>
 					</li>
