@@ -391,7 +391,7 @@ class qa_html_theme extends qa_html_theme_base
 									<input type="hidden" name="code" value="<?php
 				echo qa_html(qa_get_form_security_code('register'));
 	?>"/>
-									<input type="submit"  value="Register" value="<?php
+									<input type="submit" value="<?php
 				echo $this->content['navigation']['user']['register']['label'];
 	?>" id="qa-register" name="doregister" class="btn btn-primary btn-block" />								
 								</form>
