@@ -507,16 +507,16 @@ function cs_ajax_user_popover(){
 		<div id="<?php echo $userid;?>_popover" class="user-popover">
 			<div class="counts clearfix">
 				<div class="points">
-					<?php echo '<span>'.$data['points'] .'</span>Points'; ?>
+					<?php echo '<span>'.$data['points'] .'</span>' . qa_lang_html('cleanstrap/points'); ?>
 				</div>
 				<div class="qcount">
-					<?php echo '<span>'.$data['qposts'] .'</span>Questions'; ?>
+					<?php echo '<span>'.$data['qposts'] .'</span>' . qa_lang_html('cleanstrap/questions'); ?>
 				</div>
 				<div class="acount">
-					<?php echo '<span>'.$data['aposts'] .'</span>Answers'; ?>
+					<?php echo '<span>'.$data['aposts'] .'</span>' . qa_lang_html('cleanstrap/answers'); ?>
 				</div>
 				<div class="ccount">
-					<?php echo '<span>'.$data['cposts'] .'</span>Comments'; ?>
+					<?php echo '<span>'.$data['cposts'] .'</span>' . qa_lang_html('cleanstrap/comments'); ?>
 				</div>
 			</div>
 			<div class="bottom">	
