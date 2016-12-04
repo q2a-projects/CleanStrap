@@ -75,10 +75,10 @@
 		// output the list of selected post type
 		function carousel_item($type, $limit, $col_item = 1){
 			require_once QA_INCLUDE_DIR.'qa-app-posts.php';
-			$post = qa_db_query_sub('SELECT * FROM ^postmetas, ^posts INNER JOIN ^users ON ^posts.userid=^users.userid WHERE ^posts.type=$ and ( ^postmetas.postid = ^posts.postid and ^postmetas.title = "featured_question" ) ORDER BY ^posts.created DESC LIMIT #', $type, $limit);	
+			$posts = qa_db_read_all_assoc(qa_db_query_sub('SELECT * FROM ^postmetas, ^posts INNER JOIN ^users ON ^posts.userid=^users.userid WHERE ^posts.type=$ and ( ^postmetas.postid = ^posts.postid and ^postmetas.title = "featured_question" ) ORDER BY ^posts.created DESC LIMIT #', $type, $limit));
 			$output ='<div class="item"><div class="row">';
 			$i = 1;
-			while($p = mysql_fetch_array($post)){
+			foreach ($posts as $p) {
 				if($type=='Q'){
 					$what = qa_lang('cleanstrap/asked');
 				}elseif($type=='A'){
