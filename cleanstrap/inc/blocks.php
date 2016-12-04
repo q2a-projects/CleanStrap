@@ -2046,7 +2046,7 @@ class qa_html_theme extends qa_html_theme_base
         $args = strip_tags($_REQUEST['args']);
         $args = explode('_', $args);
         print_r($args);
-        if ((qa_get_logged_in_level() > QA_USER_LEVEL_ADMIN) && isset($args) && qa_check_form_security_code('delete-image', $args[0])) {
+        if ((qa_get_logged_in_level() >= QA_USER_LEVEL_ADMIN) && isset($args) && qa_check_form_security_code('delete-image', $args[0])) {
             require_once QA_INCLUDE_DIR . 'qa-db-metas.php';
             $img = qa_db_postmeta_get($args[1], 'featured_image');
             
