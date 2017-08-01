@@ -2205,9 +2205,6 @@ input.qa-form-wide-number{
 	padding: 9px;
 }
 
-#site-footer .ra-social-links {
-}
-
 #site-header .navbar-default .login-register {
 	border-radius: 2px;
 	float: right;
@@ -3789,6 +3786,10 @@ input[type=checkbox].on-off-checkbox {
 	color: #333333;
 }
 
+.open-login-button{
+	margin: 0 5px 5px 0;
+}
+
 .row *:first-child #loginform:before {
 	background: #EEEEEE;
 	content: "";
@@ -4247,7 +4248,7 @@ input[type=checkbox].on-off-checkbox {
 	margin-top: 0;
 }
 .qa-q-list.clean .qa-q-item-title a{
-	color: #777777;
+	color: #555;
 	display: inline;
 	font-size: 13px;
 	font-weight: 300;
