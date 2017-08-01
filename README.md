@@ -16,11 +16,11 @@ to set widgets using new Drag & Drop widget builder, click on your profile pictu
 
 ## Author
 
-This free theme is created by [Towhid Nategheian](http://TowhidN.com "Freelance Question2Answer Developer"), from [QA-Themes.com](http://QA-Themes.com "Q2A Themes and Plugins") and team. we create professional Question2Answer Themes and plugins. checkout our [free Question2Answer Themes](http://qa-themes.com/themes "Q2A Themes") and [Plugins](http://qa-themes.com/plugins "Free Q2A Plugins").
+This free theme is created by [Towhid Nategheian](http://therational.ist/ "Freelance Question2Answer Developer"), from [QA-Themes.com](http://QA-Themes.com "Q2A Themes and Plugins") and team. we create professional Question2Answer Themes and plugins. checkout our [free Question2Answer Themes](http://qa-themes.com/themes "Q2A Themes") and [Plugins](http://qa-themes.com/plugins "Free Q2A Plugins").
 
 ## Copyright
 
-this theme and all it's source code is published under [MIT License]. you are free to use or change it in any way you like, just don't remove the attribution.
+This theme and all it's source code is published under [MIT License]. you are free to use or change it in any way you like, just don't remove the attribution.
 
 ## About Question2Answer
 
