@@ -1100,7 +1100,7 @@ class qa_html_theme extends qa_html_theme_base
 		
 		$this->favorite();
 		$this->voting($q_view);
-		$this->output($q_view['raw']['title']);
+		$this->output(htmlspecialchars($q_view['raw']['title']));
 		$this->output('</h2>'); 
 		
 		$this->output('<div class="question-meta">', cs_post_status($q_view), (is_featured($q_view['raw']['postid']) ? '<span class="featured-sticker icon-star">' . qa_lang_html('cleanstrap/featured') . '</span>' : ''), 
