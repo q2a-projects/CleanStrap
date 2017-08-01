@@ -108,6 +108,9 @@ class qa_html_theme_layer extends qa_html_theme_base {
 		function cs_get_widgets(){
 			ob_start();
 			foreach(qa_load_modules_with('widget', 'allow_template') as $k => $widget){
+				// plugin compatibility: Ignore widget from the plugin "Q2A-Ultimate-Widgets"
+				if(substr($k,0,16)=='Ultimate Widgets')
+					continue;
 				?>
 				<div class="draggable-widget" data-name="<?php echo $k; ?>">					
 					<div class="widget-title"><?php echo $k; ?> 
