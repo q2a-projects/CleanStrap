@@ -153,8 +153,8 @@
 						}elseif($post_type=='A'){
 							$output .= ' <span class="vote-count">'.$post['netvotes'].' votes</span>';
 						}
-						$output .= '</div></div>';	
-						$output .= '</li>';	
+						$output .= '</div></div>';
+						$output .= '</li>';
 					}
 					$output .= '</ul>';
 					if($return)
@@ -207,7 +207,7 @@
 				}elseif($post_type=='A'){
 					$output .= ' <span class="vote-count">'.$p['netvotes'].' votes</span>';
 				}
-				$output .= '</div></div>';	
+				$output .= '</div></div>';
 
 				$output .= '</li>';
 			}

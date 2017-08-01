@@ -16,8 +16,8 @@ if(isset($_POST["op"]) && $_POST["op"] == "delete" && isset($_POST['name']))
 	$filePath = $output_dir. $fileName;
 	if (file_exists($filePath)) 
 	{
-        unlink($filePath);
-    }
+		unlink($filePath);
+	}
 	echo "Deleted File ".$fileName."<br>";
 }
 

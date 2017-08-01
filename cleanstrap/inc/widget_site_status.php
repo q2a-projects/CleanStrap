@@ -70,7 +70,7 @@
 			if($type == 'bar'){
 			$o .='<div class="bar-float"><div class="sparkline" data-type="bar" data-bar-color="#E45840" data-bar-width="30" data-height="80">
 					<!--'.qa_opt('cache_qcount').','.qa_opt('cache_acount').','.qa_opt('cache_ccount').','.qa_opt('cache_unaqcount').','.qa_opt('cache_unselqcount').'--></div>
-                    <ul class="list-inline text-muted axis">
+					<ul class="list-inline text-muted axis">
 						<li>'.qa_lang_html('cleanstrap/que').'</li><li>'.qa_lang_html('cleanstrap/ans').'</li><li>'.qa_lang_html('cleanstrap/com').'</li><li>'.qa_lang_html('cleanstrap/ua').'</li><li>'.qa_lang_html('cleanstrap/us').'</li>
 					</ul></div>
 					<div class="acti-indicators">

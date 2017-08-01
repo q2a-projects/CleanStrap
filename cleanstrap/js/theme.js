@@ -15,7 +15,7 @@ function cs_question_meta(){
 				qa_hide_waiting(this);
 				location.reload();
 			},
-		});		
+		});
 	});
 	
 	$('#q_meta_remove_featured_image').click(function(){
@@ -33,7 +33,7 @@ function cs_question_meta(){
 				$('#q_meta_remove_featured_image').hide();
 				location.reload();
 			},
-		});	
+		});
 	});
 
 }
@@ -104,18 +104,18 @@ function cs_vote_click(){
 						
 
 					} else if (lines[0]=='0') {						
-						cs_alert(lines[1]);					
+						cs_alert(lines[1]);
 					} else
 						qa_ajax_error();
 				}
-			);	
+			);
 		}
 		return false;
-	});	
+	});
 }
 function cs_ajax_loading($elm){
 	var position = $($elm).offset();
-	var html = '<div id="ajax-loading"></div>';	
+	var html = '<div id="ajax-loading"></div>';
 	$(html).appendTo('body').ajaxStart(function () {
 		$('#ajax-loading').css(position);
 		$(this).show();
@@ -228,20 +228,20 @@ function cs_load_items(){
 
 	if(winwidth > 1170 && ajaxblockwidth > 250){
 		$.ajax({
-            data: {
+			data: {
 				cs_ajax: true,
 				cs_ajax_html: true,
 				height: $('#site-body').height(),
-                action: 'get_ajax_block',
-            },
-            dataType: 'html',
-            context: this,
-            success: function (response) {
+				action: 'get_ajax_block',
+			},
+			dataType: 'html',
+			context: this,
+			success: function (response) {
 				$('#ajax-item #ajax-blocks').css('width', (winwidth - contwidth)- 30 );
 				$(response).appendTo('#ajax-item #ajax-blocks');
 				cs_sparkline('.pieact');
-            },
-        });
+			},
+		});
 		
 	}
 
@@ -252,7 +252,7 @@ function cs_load_items(){
 		ajaxblockwidth 	= winwidth - contwidth;
 
 	if(winwidth > 1170 && ajaxblockwidth > 250){	
-		$('#ajax-item #ajax-blocks').css('width', (winwidth - contwidth)- 30 );		
+		$('#ajax-item #ajax-blocks').css('width', (winwidth - contwidth)- 30 );
 	}else{
 		$('#ajax-item #ajax-blocks').hide();
 	}
@@ -320,7 +320,7 @@ function cs_widgets(){
 		$('.position-canvas').not($(this).parent().next()).hide();
 		$(this).parent().next().toggle(0);
 		$(this).toggleClass('icon-angle-up icon-angle-down');
-	});	
+	});
 	$('#ra-widgets').delegate('.widget-delete', 'click', function(){
 		
 		var id = $(this).closest('.draggable-widget').data('id');
@@ -334,21 +334,21 @@ function cs_widgets(){
 			success: function (response) {
 				
 			},
-		});	
+		});
 		$(this).closest('.draggable-widget').remove();
-	});		
+	});
 	$('#ra-widgets').delegate('.draggable-widget select, .draggable-widget input, .draggable-widget textarea', 'click', function(){
 		var $parent = $(this).closest('.widget-canvas');
-		$parent.find('.widget-save').addClass('active');	
-	});	
+		$parent.find('.widget-save').addClass('active');
+	});
 	$('#ra-widgets').delegate('.widget-template-to', 'click', function(){
 		var $parent = $(this).closest('.position-canvas');
 		$(this).closest('.draggable-widget').find('.select-template').slideToggle(200);
-	});	
+	});
 	$('#ra-widgets').delegate('.widget-options', 'click', function(){
 		var $parent = $(this).closest('.position-canvas');
 		$(this).closest('.draggable-widget').find('.widget-option').slideToggle(200);
-	});	
+	});
 
 	
 	$('#ra-widgets').delegate('.widget-save.active', 'click', function(){
@@ -376,7 +376,7 @@ function cs_widgets(){
 				ui.placeholder.height(42);
 			},
 			stop: function () { 
-				$(this).closest('.widget-canvas').find('.widget-save').addClass('active');				
+				$(this).closest('.widget-canvas').find('.widget-save').addClass('active');
 			}
 		});
 	}
@@ -465,7 +465,7 @@ function cs_ask_box_autocomplete(){
 		.appendTo(ul);
 	};
 
-    $('#ra-ask-search').off('keyup keydown keypress');
+	$('#ra-ask-search').off('keyup keydown keypress');
 }
 
 function back_to_top(){
@@ -514,7 +514,7 @@ function cs_save_image(image){
 		success: function (response) {
 			//$('.question-image-container').append('<img src="'+response+'" />');
 		},
-	});	
+	});
 }
 
 function cs_user_popover(){	
@@ -550,7 +550,7 @@ function cs_user_popover(){
 			}else{
 				//if($('.user-popover').is(':visible'))
 					//$('.user-popover').hide();
-				//$(this).addClass('mouseover');	
+				//$(this).addClass('mouseover');
 				$('#'+userid+'_popover').removeAttr('style');
 				$('#'+userid+'_popover').position({my: 'center bottom',at: 'center top', of:$this, collision: 'fit flip'});
 				$('#'+userid+'_popover').show();
@@ -576,7 +576,7 @@ $(document).ready(function(){
 	if( main_height < win_height)
 		$('#site-body').css('height', win_height -50);
 	
-	cs_float_left();	
+	cs_float_left();
 	dropdown_override();
 	cs_slide_menu();
 	cs_vote_click();

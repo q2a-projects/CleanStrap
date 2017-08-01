@@ -205,7 +205,7 @@ class qa_html_theme_layer extends qa_html_theme_base {
 
 		}
 		function get_widget_form($name, $options = false){
-			$module	=	qa_load_module('widget', $name);							
+			$module	=	qa_load_module('widget', $name);	
 			if(is_object($module) && method_exists($module, 'cs_widget_form')){
 				$fields = $module->cs_widget_form();
 				

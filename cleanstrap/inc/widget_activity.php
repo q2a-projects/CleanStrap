@@ -95,7 +95,7 @@
 				}
 				else {
 					$event_name = qa_lang('cleanstrap/commented');
-					$event_icon = 'icon-chat';					
+					$event_icon = 'icon-chat';
 				}
 				
 				$username = (is_null($p['handle'])) ? qa_lang('cleanstrap/anonymous') : htmlspecialchars($p['handle']);
@@ -105,11 +105,11 @@
 				$time = @$timeCode['prefix'] . @$timeCode['data'] . @$timeCode['suffix'];
 				
 				$o .= '<li class="event-item">';
-				$o .= '<div class="event-inner">';	
+				$o .= '<div class="event-inner">';
 				
 				$o .= '<div class="event-icon pull-left '.$event_icon.'"></div>';
 					
-				$o .= '<div class="event-content">';			
+				$o .= '<div class="event-content">';
 				$o .= '<p class="title"><strong class="avatar" data-handle="'.$p['handle'].'" data-id="'. $p['userid'].'">'.@$usernameLink.'</strong> <span class="what">'.$event_name.'</span></p>';
 				
 				if ($p['type'] == 'Q') {
@@ -120,9 +120,9 @@
 					$o .= '<a class="event-title" href="' . cs_post_link($p['parentid']) . '#c' . $p['postid'] . '">' . cs_truncate(strip_tags($p['content']),100) . '</a>';
 				}
 			
-				$o .= '<span class="time">'.$time.'</span>';	
-				$o .= '</div>';	
-				$o .= '</div>';	
+				$o .= '<span class="time">'.$time.'</span>';
+				$o .= '</div>';
+				$o .= '</div>';
 				$o .= '</li>';
 			}
 			$o .= '</ul>';

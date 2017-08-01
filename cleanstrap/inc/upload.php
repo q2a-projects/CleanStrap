@@ -55,7 +55,7 @@ if(isset($_FILES["featured"]))
  			$filenames[] = $file_name_with_ext;
 			$filenames[] = $file_name .'_s.'.$ext;
 	 	
-    	//echo $file_name_with_ext;
+		//echo $file_name_with_ext;
 		 echo json_encode($filenames);
 	}
 }

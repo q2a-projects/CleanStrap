@@ -93,7 +93,7 @@
 			qa_opt('cs_version', $version);
 		}
 		if (qa_get_logged_in_level()>=QA_USER_LEVEL_ADMIN){	
-			qa_register_layer('/inc/options.php', 'Theme Options', Q_THEME_DIR , Q_THEME_URL );	
+			qa_register_layer('/inc/options.php', 'Theme Options', Q_THEME_DIR , Q_THEME_URL );
 			qa_register_layer('/inc/widgets.php', 'Theme Widgets', Q_THEME_DIR , Q_THEME_URL );
 		}	
 			
@@ -115,7 +115,7 @@
 		qa_register_module('widget', '/inc/widget_user_posts.php', 'cs_user_posts_widget', 'CS User Posts', Q_THEME_DIR, Q_THEME_URL);
 		//enable category widget only if category is active in q2a
 		if ( qa_using_categories() ){
-			qa_register_module('widget', '/inc/widget_categories.php', 'widget_categories', 'CS Categories', Q_THEME_DIR, Q_THEME_URL);			
+			qa_register_module('widget', '/inc/widget_categories.php', 'widget_categories', 'CS Categories', Q_THEME_DIR, Q_THEME_URL);
 			qa_register_module('widget', '/inc/widget_current_category.php', 'cs_current_category_widget', 'CS Current Cat', Q_THEME_DIR, Q_THEME_URL);
 		}
 	}

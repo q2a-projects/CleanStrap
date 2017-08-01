@@ -78,7 +78,7 @@
 			reset($populartags);
 			$themeobject->output('<div class="ra-tags-widget clearfix">');
 	
-			$blockwordspreg=qa_get_block_words_preg();			
+			$blockwordspreg=qa_get_block_words_preg();
 			foreach ($populartags as $tag => $count) {
 				if (count(qa_block_words_match_all($tag, $blockwordspreg)))
 					continue; // skip censored tags

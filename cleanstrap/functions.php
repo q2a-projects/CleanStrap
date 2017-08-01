@@ -31,9 +31,9 @@ function get_widgets_by_position($position)
 function widget_opt($name, $position=false, $order = false, $param = false, $id= false)
 {		
 	if($position && $param){
-		return widget_opt_update($name, $position, $order, $param, $id);		
+		return widget_opt_update($name, $position, $order, $param, $id);
 	}else{
-		qa_db_read_one_value(qa_db_query_sub('SELECT * FROM ^cs_widgets WHERE name = $',$name ), true);		
+		qa_db_read_one_value(qa_db_query_sub('SELECT * FROM ^cs_widgets WHERE name = $',$name ), true);
 	}
 }
 
@@ -112,7 +112,7 @@ function cs_get_avatar($handle, $size = 40, $html =true){
 		
 	preg_match( '@src="([^"]+)"@' , $img_html , $match );
 	if($html)
-		return '<a href="'.qa_path_html('user/'.$handle).'">'.(!defined('QA_WORDPRESS_INTEGRATE_PATH') ?  '<img src="'.$match[1].'" />':$img_html).'</a>';		
+		return '<a href="'.qa_path_html('user/'.$handle).'">'.(!defined('QA_WORDPRESS_INTEGRATE_PATH') ?  '<img src="'.$match[1].'" />':$img_html).'</a>';
 	elseif(isset($match[1]))
 		return $match[1];
 }
@@ -142,11 +142,11 @@ function cs_post_status($item){
 	}elseif(@$item['raw']['closedbyid']){
 		$type = cs_post_type(@$item['raw']['closedbyid']);
 		if($type == 'Q')
-			$notice =   '<span class="post-status duplicate">'.qa_lang_html('cleanstrap/duplicate').'</span>' ;	
+			$notice =   '<span class="post-status duplicate">'.qa_lang_html('cleanstrap/duplicate').'</span>' ;
 		else
-			$notice =   '<span class="post-status closed">'.qa_lang_html('cleanstrap/closed').'</span>' ;	
+			$notice =   '<span class="post-status closed">'.qa_lang_html('cleanstrap/closed').'</span>' ;
 	}else{
-		$notice =   '<span class="post-status open">'.qa_lang_html('cleanstrap/open').'</span>' ;	
+		$notice =   '<span class="post-status open">'.qa_lang_html('cleanstrap/open').'</span>' ;
 	}
 	return $notice;
 }
@@ -158,11 +158,11 @@ function cs_get_post_status($item){
 	}elseif(@$item['raw']['closedbyid']){
 		$type = cs_post_type(@$item['raw']['closedbyid']);
 		if($type == 'Q')
-			$status =   'duplicate' ;	
+			$status =   'duplicate' ;
 		else
-			$status =   'closed' ;	
+			$status =   'closed' ;
 	}else{
-		$status =   'open' ;	
+		$status =   'open' ;
 	}
 	return $status;
 }
@@ -355,12 +355,12 @@ function reset_theme_options(){
 	qa_opt('cs_styling_rtl', false);
 	qa_opt('cs_nav_position', 'top');
 	qa_opt('cs_theme_layout', 'boxed');
-	qa_opt('cs_nav_fixed', true);	
-	qa_opt('cs_show_icon', true);	
-	qa_opt('cs_enable_ask_button', true);	
-	qa_opt('cs_enable_category_nav', true);	
-	qa_opt('cs_enable_clean_qlist', true);	
-	qa_opt('cs_enable_default_home', true);	
+	qa_opt('cs_nav_fixed', true);
+	qa_opt('cs_show_icon', true);
+	qa_opt('cs_enable_ask_button', true);
+	qa_opt('cs_enable_category_nav', true);
+	qa_opt('cs_enable_clean_qlist', true);
+	qa_opt('cs_enable_default_home', true);
 	qa_opt('cs_enable_except', false);
 	qa_opt('cs_except_len', 240);
 	if ((int)qa_opt('avatar_q_list_size')>0){
@@ -456,27 +456,27 @@ function cs_cat_path($categorybackpath){
  */
 function multi_array_key_exists( $needle, $haystack ) {
  
-    foreach ( $haystack as $key => $value ) :
+	foreach ( $haystack as $key => $value ) :
 
-        if ( $needle == $key )
-            return true;
-       
-        if ( is_array( $value ) ) :
-             if ( multi_array_key_exists( $needle, $value ) == true )
-                return true;
-             else
-                 continue;
-        endif;
-       
-    endforeach;
+		if ( $needle == $key )
+			return true;
+	   
+		if ( is_array( $value ) ) :
+			 if ( multi_array_key_exists( $needle, $value ) == true )
+				return true;
+			 else
+				 continue;
+		endif;
+	   
+	endforeach;
    
-    return false;
+	return false;
 }
 function make_array_utf8( $arr ) {
-    foreach ( $arr as $key => $value )
-        if ( is_array( $value ) ) 
-            $arr[$key] = make_array_utf8( $value );
-        else
+	foreach ( $arr as $key => $value )
+		if ( is_array( $value ) ) 
+			$arr[$key] = make_array_utf8( $value );
+		else
 			$arr[$key] = iconv('UTF-8', 'UTF-8//IGNORE', utf8_encode($value));
 	return $arr;
 }
@@ -538,17 +538,17 @@ function cs_ago($time)
 
    $now = time();
 
-       $difference     = $now - $time;
-       $tense         = "ago";
+	   $difference	 = $now - $time;
+	   $tense		 = "ago";
 
    for($j = 0; $difference >= $lengths[$j] && $j < count($lengths)-1; $j++) {
-       $difference /= $lengths[$j];
+	   $difference /= $lengths[$j];
    }
 
    $difference = round($difference);
 
    if($difference != 1) {
-       $periods[$j].= "s";
+	   $periods[$j].= "s";
    }
 
    return "$difference $periods[$j] 'ago' ";
@@ -556,7 +556,7 @@ function cs_ago($time)
 
 function stripslashes2($string) {
 	str_replace('\\', '', $string);
-    return $string;
+	return $string;
 }
 function qw_is_state_edit(){
 	$request = qw_request_text('state');

@@ -102,13 +102,13 @@
 			$output .='<ul>';
 			if(isset($qa_content)){
 				foreach ($qa_content as $qs){
-					$icon = 'icon-time undefined';					
-					$output .='<li class="activity-item">';					
+					$icon = 'icon-time undefined';
+					$output .='<li class="activity-item">';
 					$output .= '<div class="list-right">';
-					$output .= '<div class="type pull-left '.$icon.'"></div>';					
+					$output .= '<div class="type pull-left '.$icon.'"></div>';
 					$output .= '<div class="what"><a class="what-task" href="'.@$qs['url'].'">'.$qs['what'].'</a>';
 					$output .= '<a href="'.$qs['url'].'">'.$qs['title'].'</a> </div>';
-					$output .= '<strong class="when">'.implode(' ', $qs['when']).'</strong>';					
+					$output .= '<strong class="when">'.implode(' ', $qs['when']).'</strong>';
 					$output .= '</div>';
 					$output .='</li>';
 				}

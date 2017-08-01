@@ -11,7 +11,7 @@
 
 //	Load the Q2A base file which sets up a bunch of crucial functions
 	require_once '../../../qa-include/qa-base.php';
-	qa_report_process_stage('init_ajax');		
+	qa_report_process_stage('init_ajax');
 
 //	Get general Ajax parameters from the POST payload, and clear $_GET
 	qa_set_request(qa_post_text('qa_request'), qa_post_text('qa_root'));
@@ -35,10 +35,10 @@ if(isset($_REQUEST['action'])){
 function cs_ajax_save_widget_position()
 {
 	if (qa_get_logged_in_level() >= QA_USER_LEVEL_ADMIN) {
-		$position     = strip_tags($_REQUEST['position']);
+		$position	 = strip_tags($_REQUEST['position']);
 		$jsonstring = $_REQUEST['widget_names'];//stripslashes2(str_replace('\"', '"', $_REQUEST['widget_names']));
 		$widget_names = json_decode($jsonstring, true);
-		$newid        = array();
+		$newid		= array();
 		if (isset($widget_names) && is_array($widget_names))
 			foreach ($widget_names as $k => $w) {
 				$param = array(

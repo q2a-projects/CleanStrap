@@ -115,9 +115,9 @@
 				$when = qa_when_to_html(strtotime($p['created']), 7);
 				$avatar = cs_get_avatar($handle, 15, false);
 				if($avatar)
-					$output .= '<img src="'.$avatar.'" />';	
-				$output .= '<span class="icon-time">'.implode(' ', $when).'</span>';	
-				$output .= '<span class="vote-count">'.$p['netvotes'].' '.qa_lang('cleanstrap/votes').'</span></div>';	
+					$output .= '<img src="'.$avatar.'" />';
+				$output .= '<span class="icon-time">'.implode(' ', $when).'</span>';
+				$output .= '<span class="vote-count">'.$p['netvotes'].' '.qa_lang('cleanstrap/votes').'</span></div>';
 				
 				$output .= '</div>';
 				$output .= '</div>';
@@ -147,13 +147,13 @@
 				
 			$themeobject->output('
 
-            <div id="featured-slider" class="carousel slide">
-                <!-- Carousel items -->
-                <div class="carousel-inner">
-                    '.$this->carousel_item('Q', $count, $col).'                    
-                </div>
-                <a class="left carousel-control icon-angle-left" href="#featured-slider" data-slide="prev"></a><a class="right carousel-control icon-angle-right" href="#featured-slider" data-slide="next"></a>
-            </div>
+			<div id="featured-slider" class="carousel slide">
+				<!-- Carousel items -->
+				<div class="carousel-inner">
+					'.$this->carousel_item('Q', $count, $col).'					
+				</div>
+				<a class="left carousel-control icon-angle-left" href="#featured-slider" data-slide="prev"></a><a class="right carousel-control icon-angle-right" href="#featured-slider" data-slide="next"></a>
+			</div>
 
 			');
 			$themeobject->output('</div>');

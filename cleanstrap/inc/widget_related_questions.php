@@ -89,9 +89,9 @@
 					$themeobject->output('<div class="post-content">');
 					$themeobject->output('<a class="title" href="'.qa_q_path_html($p['postid'], $p['title']).'">'.qa_html($p['title']).'</a>');
 					$themeobject->output('<div class="meta">');
-					$themeobject->output('<span>' . qa_lang_sub('cleanstrap/x_answers', $p['acount']) . '</span>');     
+					$themeobject->output('<span>' . qa_lang_sub('cleanstrap/x_answers', $p['acount']) . '</span>'); 
 					$themeobject->output('<span class="time icon-time">' .  $when . '</span>');
-					$themeobject->output('<span class="vote-count icon-thumbs-up2">' . qa_lang_sub('cleanstrap/x_votes', $p['netvotes']) . '</span>');		
+					$themeobject->output('<span class="vote-count icon-thumbs-up2">' . qa_lang_sub('cleanstrap/x_votes', $p['netvotes']) . '</span>');
 					$themeobject->output('</div>');
 					$themeobject->output('</div>');
 					

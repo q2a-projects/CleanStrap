@@ -116,7 +116,7 @@
 		
 			$cache['feed']['content'] =  $output;
 			$cache['feed']['age'] = time();
-			$cache['changed'] = true;	
+			$cache['changed'] = true;
 		}
 	
 	}

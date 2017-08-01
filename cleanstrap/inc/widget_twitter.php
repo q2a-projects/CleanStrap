@@ -142,7 +142,7 @@
 			//$tweets = array(array('text' => "hello @towhidn"));
 			$cache['twitter'] =  $tweets;
 			$cache['twitter']['age'] = time();
-			$cache['changed'] = true;	
+			$cache['changed'] = true;
 			return $tweets;
 		}
 
@@ -160,7 +160,7 @@
 				
 			$tweets=$this->get_tweets();
 
-			if (empty($tweets)) return;			
+			if (empty($tweets)) return;
 			$themeobject->output('<ul class="qa-tweeter-list">');
 			foreach($tweets as $items)
 			{
@@ -173,7 +173,7 @@
 				$items['text'] = preg_replace(
 					'/@(\w+)/',
 					'<a href="http://twitter.com/$1">@$1</a>',
-					$items['text']);	
+					$items['text']);
 				// hashtags
 				$items['text'] = preg_replace(
 					'/\s+#(\w+)/',

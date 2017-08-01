@@ -91,7 +91,7 @@
 				
 			}else{
 				if( qa_opt('avatar_allow_upload') && @$widget_opt['cs_nu_with_avatar'] )
-					$users = qa_db_read_all_assoc(qa_db_query_sub("SELECT * FROM ^users WHERE avatarblobid IS NOT NULL ORDER BY created DESC LIMIT #", $limit));	
+					$users = qa_db_read_all_assoc(qa_db_query_sub("SELECT * FROM ^users WHERE avatarblobid IS NOT NULL ORDER BY created DESC LIMIT #", $limit));
 				elseif ( qa_opt('avatar_allow_gravatar') || ( qa_opt('avatar_default_show') && strlen(qa_opt('avatar_default_blobid')) ) )
 					$users = qa_db_read_all_assoc(qa_db_query_sub("SELECT * FROM ^users ORDER BY created DESC LIMIT #", $limit)); //refresh every 10 minutes
 					
