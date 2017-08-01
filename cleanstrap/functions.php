@@ -243,13 +243,13 @@ function cs_name($handle){
 
 
 function cs_post_link($id){
-	$type = mysql_result(qa_db_query_sub('SELECT type FROM ^posts WHERE postid = "'.$id.'"'), 0);
+	$type = mysqli_result(qa_db_query_sub('SELECT type FROM ^posts WHERE postid = "'.$id.'"'), 0);
 	
 	if($type == 'A')
-		$id = mysql_result(qa_db_query_sub('SELECT parentid FROM ^posts WHERE postid = "'.$id.'"'),0);
+		$id = mysqli_result(qa_db_query_sub('SELECT parentid FROM ^posts WHERE postid = "'.$id.'"'),0);
 	
 	$post = qa_db_query_sub('SELECT title FROM ^posts WHERE postid = "'.$id.'"');
-	return qa_q_path_html($id, mysql_result($post,0));
+	return qa_q_path_html($id, mysqli_result($post,0));
 }	
 
 function cs_tag_list($limit = 20){
